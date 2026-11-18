@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>4 · Cavity Walls — CONM 1200 Exam 3</title>
+<link rel="stylesheet" href="css/style.css"><script src="js/diagrams.js"></script>
+<style>
+  .lay-lbl{transition:opacity .25s}
+  .mode-water .lay-lbl.tie,.mode-ties .lay-lbl.wtr{opacity:.15}
+  .mode-layers .wtr-only,.mode-ties .wtr-only{opacity:0}
+  .mode-water .tie-hl,.mode-layers .tie-hl{opacity:0}
+  .tie-hl{transition:opacity .25s}
+</style></head>
+<body style="--accent:var(--wall)">
+<main class="wrap">
+  <div class="lesson-hero">
+    <div class="kicker">Lesson 4 · Wall details</div>
+    <h1>Cavity Walls, Flashing, Weeps &amp; Joints</h1>
+    <p class="lede">The big idea: <b>brick leaks — on purpose, that's fine</b>. A cavity wall expects water to get through the brick, catches it in the air space, and sends it back outside with <b>flashing + weeps</b>. Picture the water's path and these questions answer themselves.</p>
+    <div class="toc"><a href="#s1">The cavity wall</a><a href="#s2">Water over a window</a><a href="#s3">Ties</a><a href="#s4">Flashing &amp; weeps</a><a href="#s5">Shelf angles</a><a href="#s6">Expansion/control joints</a><a href="#s7">Sandwich panels</a></div>
+  </div>
+
+  <section class="topic" id="s1"><span class="num">4.1</span>
+    <h2>Anatomy of a brick-veneer cavity wall (at the base)</h2>
+    <div class="stack">
+      <figure class="dia" id="cavFig">
+        <div class="dia-controls" data-chips="cavMode">
+          <button class="chip on" data-v="layers">Layers</button><button class="chip" data-v="water">▶ Water path</button><button class="chip" data-v="ties">Ties</button>
+        </div>
+        <div id="cavWrap" class="mode-layers">
+        <svg viewBox="0 0 600 450" role="img" aria-label="Cavity wall section at base">
+          <rect x="0" y="330" width="150" height="120" fill="url(#p-earth)"/>
+          <rect x="330" y="330" width="270" height="120" fill="url(#p-earth)"/>
+          <!-- foundation -->
+          <rect x="150" y="300" width="180" height="150" fill="url(#p-conc)" class="o"/>
+          <!-- interior slab -->
+          <rect x="310" y="290" width="290" height="20" fill="url(#p-conc)" class="o"/>
+          <!-- brick veneer courses -->
+          <g id="brickCourses"></g>
+          <!-- cavity (clear) -->
+          <rect x="190" y="30" width="16" height="270" fill="#fff"/>
+          <!-- insulation -->
+          <rect x="206" y="30" width="24" height="234" fill="url(#p-insul)" class="o"/>
+          <!-- CMU -->
+          <g id="cmuCourses"></g>
+          <!-- ties / joint reinf w/ tabs -->
+          <g id="ties"></g>
+          <!-- flashing -->
+          <path d="M140 300 H198 Q206 300 206 292 V262 H262" class="s-flash"/>
+          <path d="M140 300 l-4 6" class="s-flash" stroke-width="3"/>
+          <!-- weep -->
+          <rect x="161" y="281" width="7" height="18" fill="#fff" stroke="#16324b" stroke-width="1"/>
+          <!-- water -->
+          <g class="wtr-only">
+            <path d="M40 110 H186" stroke="#2a8bd6" stroke-width="2" stroke-dasharray="4 5" class="flow"/>
+            <path d="M196 120 V292 L166 296 L120 304" class="s-water flow"/>
+            <circle r="5" class="drop"><animateMotion dur="3.2s" repeatCount="indefinite" path="M40 110 H192 V292 L166 296 L110 306"/></circle>
+            <circle r="5" class="drop" visibility="hidden"><set attributeName="visibility" to="visible" begin="1.6s"/><animateMotion dur="3.2s" begin="1.6s" repeatCount="indefinite" path="M40 110 H192 V292 L166 296 L110 306"/></circle>
+            <text x="20" y="98" class="lbl" fill="#2a8bd6">rain gets through</text>
+            <text x="20" y="114" class="lbl-s">the brick + mortar</text>
+            <text x="20" y="345" class="lbl" fill="#2a8bd6">… and drains</text><text x="20" y="361" class="lbl" fill="#2a8bd6">out the weep</text>
+          </g>
+          <!-- labels -->
+          <g class="lay-lbl">
+            <path d="M170 50 L120 50" class="lead"/><text x="12" y="46" class="lbl">① Brick veneer</text><text x="12" y="61" class="lbl-s">(exterior wythe)</text>
+            <path d="M198 160 L198 18 L360 18" class="lead"/><text x="366" y="22" class="lbl">② Air space / drainage cavity</text>
+            <path d="M218 70 L360 70" class="lead"/><text x="366" y="74" class="lbl">③ Rigid foam insulation</text>
+            <path d="M280 120 L360 120" class="lead"/><text x="366" y="124" class="lbl">④ CMU backup wall</text>
+          </g>
+          <g class="lay-lbl tie">
+            <path d="M226 180 L360 180" class="lead"/><text x="366" y="176" class="lbl">Joint reinforcement w/ tab</text><text x="366" y="192" class="lbl-s">ties brick to CMU across the cavity</text>
+          </g>
+          <g class="lay-lbl wtr">
+            <path d="M232 262 L360 236" class="lead"/><text x="366" y="232" class="lbl">Flashing — steps up &amp; into</text><text x="366" y="248" class="lbl-s">a CMU bed joint; extends past face</text>
+            <path d="M165 290 L100 270" class="lead"/><text x="12" y="262" class="lbl">Weep = open</text><text x="12" y="277" class="lbl">head joint</text>
+            <text x="240" y="330" class="lbl" text-anchor="middle">Foundation ledge:</text><text x="240" y="347" class="lbl-s" text-anchor="middle">veneer AND backup bear here</text>
+          </g>
+          <path d="M150 395 h180" class="dim" marker-start="url(#m-arrow)" marker-end="url(#m-arrow)"/><text x="240" y="390" class="lbl-m" text-anchor="middle">concrete foundation</text>
+          <text x="560" y="284" class="lbl-s" text-anchor="end">interior floor slab</text>
+        </svg>
+        </div>
+        <figcaption>Section cut through the bottom of the wall. Outside is on the left.</figcaption>
+      </figure>
+      <div>
+        <p>A <b>cavity wall</b> (also called a <b>drainage wall</b>) = exterior cladding (skin) + inner backup wall + an air space between. With masonry, the skin is usually brick or stone veneer. Very common in commercial construction today.</p>
+        <div class="callout exam"><b>Practice Q: list the layers, outside → in</b>
+          <p><b>Brick veneer → clear drainage cavity → rigid foam insulation → CMU backup.</b><br>At the base, the veneer bears on a <b>ledge of the concrete foundation</b>, which also supports the CMU backup.</p></div>
+        <p>How it works: moisture that gets through the brick <b>collects in the cavity, runs down the back of the brick</b> to the bottom, where <b>flashing</b> catches it and <b>weep holes</b> let it out.</p>
+        <div class="callout hook"><b>Memory hook: "Catch it, Carry it, Kick it out"</b><p><b>Cavity</b> catches the water → <b>flashing</b> carries it → <b>weeps</b> kick it out.</p></div>
+        <p style="font-size:.92rem">Rigid insulation can sit in the cavity (some has mortar-catching netting at the bottom so mortar droppings don't clog the weeps). Keep the drainage space <b>clear</b>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="topic" id="s2"><span class="num">4.2</span>
+    <h2>The #1 exam picture: water above a window lintel</h2>
+    <div class="stack">
+      <figure class="dia">
+        <svg viewBox="0 0 600 440" role="img" aria-label="Head flashing and weeps over a window lintel">
+          <g id="hdBrick"></g>
+          <rect x="190" y="20" width="16" height="200" fill="#fff"/>
+          <rect x="206" y="20" width="24" height="148" fill="url(#p-insul)" class="o"/>
+          <g id="hdCmu"></g>
+          <!-- CMU lintel -->
+          <rect x="230" y="180" width="80" height="44" fill="#8f969b" class="o"/><line x1="232" y1="208" x2="308" y2="208" stroke="#41657f" stroke-width="3.5"/>
+          <!-- window -->
+          <rect x="150" y="230" width="160" height="150" class="f-glass"/>
+          <rect x="196" y="236" width="70" height="140" fill="#fff" class="o"/><rect x="204" y="244" width="54" height="124" class="f-glass o"/>
+          <!-- steel angle lintel -->
+          <path d="M146 224 H197 V176 H192 V219 H146Z" class="f-steel o"/>
+          <!-- head flashing -->
+          <path d="M138 220 H190 Q198 220 198 212 V196 Q198 160 206 160 V168 Q206 160 214 160 H262" class="s-flash" style="display:none"/>
+          <path d="M136 219 H186 Q190 219 190 213 V172 Q190 166 196 166 H206 V160 H262" class="s-flash" style="display:none"/>
+          <path d="M136 219 H200 Q206 219 206 213 V164 H262" class="s-flash"/>
+          <path d="M136 219 l-5 7" class="s-flash" stroke-width="3"/>
+          <!-- weep in course above flashing -->
+          <rect x="161" y="199" width="7" height="19" fill="#fff" stroke="#16324b" stroke-width="1"/>
+          <!-- water -->
+          <path d="M40 70 H186" stroke="#2a8bd6" stroke-width="2" stroke-dasharray="4 5" class="flow"/>
+          <path d="M197 82 V212 L166 214 L120 222" class="s-water flow"/>
+          <circle r="5" class="drop"><animateMotion dur="3s" repeatCount="indefinite" path="M40 70 H197 V212 L166 214 L108 224"/></circle>
+          <circle r="5" class="drop" visibility="hidden"><set attributeName="visibility" to="visible" begin="1.5s"/><animateMotion dur="3s" begin="1.5s" repeatCount="indefinite" path="M40 70 H197 V212 L166 214 L108 224"/></circle>
+          <!-- labels -->
+          <text x="20" y="58" class="lbl" fill="#2a8bd6">water gets in</text>
+          <path d="M262 164 L350 120" class="lead"/><text x="356" y="112" class="lbl">HEAD FLASHING</text><text x="356" y="128" class="lbl-s">up the backup, into a joint,</text><text x="356" y="142" class="lbl-s">out past the face</text>
+          <path d="M165 205 L120 180" class="lead"/><text x="20" y="166" class="lbl">WEEP right</text><text x="20" y="182" class="lbl">above flashing</text>
+          <path d="M150 224 L110 262" class="lead"/><text x="14" y="278" class="lbl">STEEL ANGLE</text><text x="14" y="294" class="lbl">LINTEL (holds brick)</text>
+          <path d="M300 200 L350 200" class="lead"/><text x="356" y="196" class="lbl">CMU lintel / bond beam</text><text x="356" y="212" class="lbl-s">(holds the backup)</text>
+          <text x="232" y="410" class="lbl-m" text-anchor="middle">WINDOW (head of opening)</text>
+          <path d="M198 40 L350 40" class="lead"/><text x="356" y="44" class="lbl">cavity: water runs DOWN the</text><text x="356" y="60" class="lbl-s">back face of the brick</text>
+        </svg>
+        <figcaption>Wherever the cavity is interrupted (here by the window), you need flashing + weeps.</figcaption>
+      </figure>
+      <div>
+        <ol class="steps">
+          <li><b>Water runs down the cavity</b> (the back of the brick).</li>
+          <li>It lands on the <b>head flashing above the lintel</b>, which is turned up the backup wall so water can't get inside.</li>
+          <li>The flashing slopes/leads it <b>outward</b> …</li>
+          <li>… and it exits through <b>weeps immediately above the flashing</b>.</li>
+        </ol>
+        <div class="callout exam" style="margin-top:16px"><b>On the exam</b><p>"It should run down the cavity to flashing and exit through weeps above the lintel." ✔<br>Not: soak into the lintel ✘ · flow through the backup to an interior sill ✘ · pass through insulation to the foundation ✘.</p></div>
+        <p><b>Sill flashing</b> (below a window) catches leaks from the bottom of the window; its ends are <b>turned up to form end dams</b> and it extends <b>beyond the exterior face</b>.</p>
+      </div>
+    </div>
+    <div class="qc" data-a="3"><div class="qh">Quick check</div><div class="qq">How should water that reaches the cavity above a window lintel drain?</div>
+      <div class="opts"><button class="opt">It should soak into the lintel and evaporate through the window opening.</button><button class="opt">It should flow through the backup wall and drain at the interior sill.</button><button class="opt">It should pass through the rigid insulation and drain at the foundation.</button><button class="opt">It should run down the cavity to flashing and exit through weeps above the lintel.</button></div>
+      <div class="why">Cavity → flashing → weeps. Water never goes inward.</div></div>
+  </section>
+
+  <section class="topic" id="s3"><span class="num">4.3</span>
+    <h2>Masonry ties — connecting veneer to backup</h2>
+    <div class="stack">
+      <figure class="dia">
+        <svg viewBox="0 0 560 300" role="img" aria-label="Two-piece adjustable tie">
+          <rect x="40" y="30" width="70" height="240" fill="url(#p-brick)" class="o"/>
+          <rect x="40" y="148" width="70" height="8" class="f-mortar"/>
+          <rect x="110" y="30" width="90" height="240" fill="#fff"/>
+          <rect x="200" y="30" width="110" height="240" fill="url(#p-cmu)" class="o"/>
+          <rect x="200" y="186" width="110" height="9" class="f-mortar"/>
+          <!-- eye section from CMU joint -->
+          <path d="M300 190 H160" stroke="#41657f" stroke-width="4"/>
+          <path d="M300 182 H170" stroke="#41657f" stroke-width="0"/>
+          <ellipse cx="160" cy="176" rx="6" ry="15" fill="none" stroke="#41657f" stroke-width="4"/>
+          <!-- pintle from brick joint -->
+          <path d="M60 152 H150 V196" stroke="#b5452b" stroke-width="4" fill="none"/>
+          <path d="M150 120 v24" stroke="#1d2433" stroke-width="2" marker-start="url(#m-arrow-ink)" />
+          <path d="M150 215 v-12" stroke="#1d2433" stroke-width="2" marker-end="url(#m-arrow-ink)"/>
+          <text x="335" y="190" class="lbl">EYE section</text><text x="335" y="206" class="lbl-s">set in the CMU bed joint</text>
+          <text x="335" y="140" class="lbl" fill="#b5452b">PINTLE</text><text x="335" y="156" class="lbl-s">set in the BRICK bed joint, drops</text><text x="335" y="170" class="lbl-s">through the eye — can slide up/down</text>
+          <text x="75" y="290" class="lbl-m" text-anchor="middle">brick</text><text x="155" y="290" class="lbl-m" text-anchor="middle">cavity</text><text x="255" y="290" class="lbl-m" text-anchor="middle">CMU</text>
+          <path d="M330 144 L160 152" class="lead"/>
+          <text x="335" y="60" class="lbl">Why adjustable?</text><text x="335" y="78" class="lbl-s">brick courses and CMU courses</text><text x="335" y="94" class="lbl-s">don't always line up — the pintle</text><text x="335" y="110" class="lbl-s">lands in whatever brick joint is there</text>
+        </svg>
+        <figcaption>Two-piece adjustable tie (eye + pintle). Steel ties create a structural bond between two or more wythes.</figcaption>
+      </figure>
+      <div>
+        <p>Ties hold the veneer back against <b>lateral</b> loads (wind pushing/pulling). They are <b>not</b> what holds up the brick's weight — the veneer bears on the foundation or a shelf angle.</p>
+        <table class="t"><tr><th>Tie type</th><th>Notes</th></tr>
+          <tr><td class="k">Adjustable (eye &amp; pintle)</td><td>Ideal when veneer &amp; backup coursing don't match</td></tr>
+          <tr><td class="k">Corrugated</td><td>Wavy metal strip; <b>nailed to a wood frame</b> backup, or set in a CMU joint</td></tr>
+          <tr><td class="k">3-wire truss tie</td><td>Reinforces the CMU joint <i>and</i> ties brick to CMU</td></tr>
+          <tr><td class="k">Ladder w/ tabs</td><td>2-wire joint reinforcement whose tabs/pintles act as adjustable ties</td></tr></table>
+        <div class="callout exam"><b>Practice Q7</b><p>An adjustable tie <b>anchors the veneer to the backup for lateral support and adjusts to align with the veneer mortar joint.</b> A backup wall other than CMU: a <b>sheathed wood-stud wall</b> (metal studs work too).</p></div>
+      </div>
+    </div>
+    <div class="qc" data-a="0"><div class="qh">Quick check</div><div class="qq">What is the primary purpose of an adjustable tie between brick veneer and a backup wall?</div>
+      <div class="opts"><button class="opt">To transfer lateral loads to the backup while allowing alignment during installation</button><button class="opt">To support the full vertical weight of the brick veneer</button><button class="opt">To carry water across the cavity to the backup</button><button class="opt">To replace the need for vertical expansion joints</button></div>
+      <div class="why">Lateral support + adjustability. Ties should never carry water inward and don't hold the veneer's weight.</div></div>
+  </section>
+
+  <section class="topic" id="s4"><span class="num">4.4</span>
+    <h2>Flashing &amp; weep holes — the rules</h2>
+    <div class="grid2">
+      <div>
+        <h3>Flashing</h3>
+        <p>Prevents water passing through a joint in a wall, roof, or chimney, and <b>directs the flow of water</b>. Made of thin metal (copper, stainless, galvanized steel), plastic, rubber, or waterproof paper.</p>
+        <h3>Weep holes</h3>
+        <ul class="tight">
+          <li>Work <b>with</b> flashing to let moisture drain out</li>
+          <li>Made by <b>leaving mortar out of part of a head joint</b></li>
+          <li>Spaced <b>16–24 in apart</b> horizontally (every 2–3 modular brick)</li>
+          <li>Rope wicks or plastic inserts can keep the joint open</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Where you need flashing + weeps</h3>
+        <p>Anywhere the cavity is interrupted:</p>
+        <svg viewBox="0 0 420 230" role="img" aria-label="Locations requiring flashing">
+          <rect x="60" y="10" width="240" height="200" fill="url(#p-brick)" class="o"/>
+          <rect x="130" y="60" width="100" height="70" class="f-glass o"/>
+          <line x1="122" y1="56" x2="238" y2="56" class="s-flash"/><line x1="122" y1="136" x2="238" y2="136" class="s-flash"/>
+          <line x1="56" y1="20" x2="304" y2="20" stroke="#41657f" stroke-width="5"/><line x1="56" y1="17" x2="304" y2="17" class="s-flash" stroke-width="2.5"/>
+          <line x1="56" y1="206" x2="304" y2="206" class="s-flash"/>
+          <text x="312" y="24" class="lbl-s">shelf angle</text><path d="M240 56 L308 62" class="lead"/><text x="312" y="66" class="lbl-s">head (lintel)</text><path d="M240 136 L308 140" class="lead"/><text x="312" y="144" class="lbl-s">sill</text><text x="312" y="210" class="lbl-s">base</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="topic" id="s5"><span class="num">4.5</span>
+    <h2>Shelf angles &amp; horizontal joints</h2>
+    <div class="stack">
+      <figure class="dia">
+        <svg viewBox="0 0 520 300" role="img" aria-label="Shelf angle with horizontal expansion joint">
+          <rect x="60" y="20" width="60" height="122" fill="url(#p-brick)" class="o"/>
+          <rect x="60" y="162" width="60" height="122" fill="url(#p-brick)" class="o"/>
+          <rect x="200" y="110" width="150" height="70" fill="url(#p-conc)" class="o"/>
+          <text x="275" y="150" class="lbl-s" text-anchor="middle">building frame / slab edge</text>
+          <path d="M56 142 H140 V100 H146 V148 H56Z" class="f-steel o"/>
+          <rect x="146" y="118" width="54" height="8" fill="#7b8293"/><text x="172" y="112" class="lbl-s" text-anchor="middle">bolted</text>
+          <path d="M52 140 H138 V96" class="s-flash" stroke-width="3"/>
+          <circle cx="90" cy="155" r="5" fill="#5d6b7a"/><path d="M60 151 h60 v10 h-60z" fill="none" stroke="#2e7d4f" stroke-width="2" stroke-dasharray="3 2"/>
+          <path d="M120 155 L240 220" class="lead"/><text x="246" y="216" class="lbl">GAP under the angle</text><text x="246" y="232" class="lbl-s">backer rod + sealant → horizontal</text><text x="246" y="246" class="lbl-s">joint lets brick grow vertically</text>
+          <path d="M100 145 L246 60" class="lead"/><text x="252" y="50" class="lbl">SHELF ANGLE</text><text x="252" y="66" class="lbl-s">carries the brick above it,</text><text x="252" y="80" class="lbl-s">every 1–2 stories</text>
+        </svg>
+      </figure>
+      <div>
+        <p><b>Shelf angles</b> are steel angles attached to the building frame or backup wall, horizontally <b>every one or two stories</b>. They <b>support the brick veneer</b> above them.</p>
+        <p>A space is left <b>under</b> each shelf angle so the brick below can expand <b>vertically</b> — that's a <b>horizontal (movement) joint</b>, filled with flexible <b>backer rod + caulking</b> to seal out air and water. Flashing &amp; weeps sit on top of the angle.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="topic" id="s6"><span class="num">4.6</span>
+    <h2>Expansion &amp; control joints — why and where</h2>
+    <div class="stack">
+      <figure class="dia">
+        <svg viewBox="0 0 560 330" role="img" aria-label="Vertical joint locations in plan and joint detail">
+          <text x="20" y="22" class="lbl-m">PLAN — where vertical joints go</text>
+          <path d="M40 60 H300 V90 H70 V250 H40Z" fill="url(#p-brick)" class="o"/>
+          <rect x="120" y="58" width="6" height="34" fill="#fff" class="o"/><rect x="38" y="160" width="34" height="6" fill="#fff" class="o"/>
+          <path d="M40 40 h83" class="dim" marker-start="url(#m-arrow)" marker-end="url(#m-arrow)"/><text x="80" y="36" class="lbl-m" text-anchor="middle">L1</text>
+          <path d="M20 60 v103" class="dim" marker-start="url(#m-arrow)" marker-end="url(#m-arrow)"/><text x="14" y="115" class="lbl-m" text-anchor="middle">L2</text>
+          <text x="96" y="130" class="lbl-s">L1 + L2 ≤ normal joint</text><text x="96" y="145" class="lbl-s">spacing, never &gt; 25 ft</text>
+          <path d="M300 90 V60 H330 V30 H470 V60" fill="none"/>
+          <path d="M300 60 H330 V30 H480 V60 H330 V90 H300Z" fill="url(#p-brick)" class="o"/>
+          <rect x="327" y="28" width="6" height="34" fill="#fff" class="o"/>
+          <text x="340" y="110" class="lbl-s">joint at an OFFSET</text>
+          <text x="20" y="282" class="lbl-s">Also at: changes in wall height · thickness · load · junctions of dissimilar materials</text>
+          <!-- detail -->
+          <text x="380" y="160" class="lbl-m">JOINT DETAIL</text>
+          <rect x="360" y="180" width="70" height="60" fill="url(#p-brick)" class="o"/><rect x="450" y="180" width="70" height="60" fill="url(#p-brick)" class="o"/>
+          <circle cx="440" cy="196" r="8" fill="#5d6b7a" class="o"/><path d="M430 180 Q440 188 450 180 V184 Q440 192 430 184Z" fill="#1d2433"/>
+          <path d="M440 196 L470 270" class="lead"/><text x="400" y="286" class="lbl-s">backer rod (foam)</text>
+          <path d="M440 183 L500 160" class="lead"/><text x="470" y="152" class="lbl-s">sealant</text>
+          <path d="M346 210 h12" stroke="#b3261e" stroke-width="2.5" marker-end="url(#m-arrow-red)"/><path d="M534 210 h-12" stroke="#b3261e" stroke-width="2.5" marker-end="url(#m-arrow-red)"/>
+          <text x="440" y="310" class="lbl" text-anchor="middle">joint squeezes as brick grows</text>
+        </svg>
+      </figure>
+      <div>
+        <p><b>Why joints?</b> Masonry moves with temperature and moisture. A long wall with no joints builds up stress and cracks. Two walls meeting at a corner (say a north and west wall) move different amounts.</p>
+        <table class="t"><tr><th></th><th>Brick</th><th>CMU</th></tr>
+          <tr><td class="k">Moves by…</td><td><b>Expanding</b> — absorbs moisture after kiln; sun heat</td><td><b>Shrinking</b> — steam-cured moist, dries out</td></tr>
+          <tr><td class="k">Joint name</td><td><b>Expansion joint</b></td><td><b>Control joint</b></td></tr>
+          <tr><td class="k">Built as</td><td colspan="2">A gap through the wythe + <b>backer rod + sealant</b>. (In the field the names get swapped — built the same way.)</td></tr></table>
+        <div class="callout note"><b>Control joints</b><p>Break a CMU wall into segments so as the block dries and shrinks, the wall contracts <i>at the joint</i> instead of cracking randomly.</p></div>
+      </div>
+    </div>
+    <div class="qc" data-a="1"><div class="qh">Quick check</div><div class="qq">What is a purpose of vertical expansion joints in fired-clay brick veneer?</div>
+      <div class="opts"><button class="opt">To carry the vertical weight of the veneer</button><button class="opt">To accommodate expansion as the fired brick absorbs moisture</button><button class="opt">To direct cavity drainage into the backup wall</button><button class="opt">To increase the bond between the veneer and the backup wall</button></div>
+      <div class="why">Bone-dry fired brick soaks up moisture and grows. The joint compresses so the wall doesn't crack.</div></div>
+  </section>
+
+  <section class="topic" id="s7"><span class="num">4.7</span>
+    <h2>Prefabricated masonry &amp; the sandwich panel</h2>
+    <div class="grid-dia">
+      <figure class="dia">
+        <svg viewBox="0 0 520 280" role="img" aria-label="Masonry sandwich panel layers">
+          <g transform="translate(60,40)">
+            <polygon points="0,200 70,200 160,140 90,140" fill="#ddd" class="o"/>
+            <!-- exterior wythe -->
+            <polygon points="0,40 30,40 30,200 0,200" fill="url(#p-brick)" class="o"/>
+            <polygon points="0,40 30,40 120,-20 90,-20" class="f-brick-l o"/>
+            <!-- insulation -->
+            <polygon points="30,40 50,40 50,200 30,200" fill="url(#p-insul)" class="o"/>
+            <polygon points="30,40 50,40 140,-20 120,-20" fill="#f7e39a" class="o"/>
+            <!-- interior -->
+            <polygon points="50,40 80,40 80,200 50,200" fill="url(#p-conc)" class="o"/>
+            <polygon points="50,40 80,40 170,-20 140,-20" fill="#d9d7d0" class="o"/>
+            <polygon points="80,40 170,-20 170,140 80,200" fill="#b7b4ac" class="o"/>
+          </g>
+          <path d="M70 250 L70 270" class="lead"/><text x="40" y="20" class="lbl" fill="#b5452b">① masonry wythe</text>
+          <path d="M100 30 L100 70" class="lead"/>
+          <text x="250" y="110" class="lbl">② rigid insulation CORE</text><path d="M246 106 L115 120" class="lead"/>
+          <text x="250" y="170" class="lbl">③ masonry / concrete wythe</text><path d="M246 166 L140 180" class="lead"/>
+          <text x="250" y="210" class="lbl-s">Built indoors, shipped, bolted or welded</text><text x="250" y="226" class="lbl-s">to the frame (dead-load + lateral connections)</text>
+        </svg>
+      </figure>
+      <div>
+        <p><b>Prefabricated masonry panels</b> are built <b>indoors under controlled conditions</b>, shipped to the site, and attached to the frame — used like precast concrete panels as a decorative skin. Reinforcing runs <b>vertically and horizontally</b> through the panel and is grouted in.</p>
+        <div class="callout exam"><b>On the exam — 3 layers, in order</b><p><b>Masonry (or concrete) — rigid insulation — masonry (or concrete).</b> Two hard faces with foam in the middle. The MC version calls it an insulated precast concrete sandwich panel: <b>concrete, insulation, concrete</b>.</p></div>
+        <div class="callout hook"><b>Hook</b><p>It's literally a sandwich: <b>bread – filling – bread</b>. The foam is the filling, never the bread.</p></div>
+      </div>
+    </div>
+    <div class="qc" data-a="2"><div class="qh">Quick check</div><div class="qq">Which sequence shows the main layers of an insulated precast concrete sandwich panel?</div>
+      <div class="opts"><button class="opt">Concrete, air cavity, concrete</button><button class="opt">Insulation, concrete, insulation</button><button class="opt">Concrete, insulation, concrete</button><button class="opt">Concrete, flashing, concrete</button></div>
+      <div class="why">Hard – foam – hard.</div></div>
+  </section>
+
+  <div class="done-row"><a class="btn ghost" href="mortar.html">← Mortar</a><button class="btn" data-done>Mark this lesson done</button><a class="btn ghost" href="cmu-lab.html">Next: CMU Lab →</a></div>
+</main>
+<script>
+function cavMode(v){ document.getElementById('cavWrap').className='mode-'+v; }
+(function(){
+  // base section brick + cmu
+  let s=''; for(let y=300;y>30;y-=20){ s+=`<rect x="150" y="${y-20}" width="40" height="20" fill="url(#p-brick)" stroke="#e7dfcf" stroke-width="2"/>`; }
+  document.getElementById('brickCourses').innerHTML=s;
+  s=''; for(let y=300;y>30;y-=38){ const h=Math.min(38,y-30); s+=`<rect x="230" y="${y-h}" width="80" height="${h}" fill="url(#p-cmu)" stroke="#e7dfcf" stroke-width="2"/>`; }
+  s+=`<rect x="230" y="30" width="80" height="270" fill="none" class="o"/><rect x="150" y="30" width="40" height="270" fill="none" class="o"/>`;
+  document.getElementById('cmuCourses').innerHTML=s;
+  let tt=''; [224,148,72].forEach(y=>{ tt+=`<path class="tie-hl" d="M300 ${y} H200 V${y-4} H172" stroke="#ffd23f" stroke-width="10" fill="none"/><path d="M300 ${y} H200 V${y-4} H172" stroke="#41657f" stroke-width="3" fill="none"/>`; });
+  document.getElementById('ties').innerHTML = tt;
+  // head detail
+  s=''; for(let y=220;y>20;y-=20){ s+=`<rect x="150" y="${y-20}" width="40" height="20" fill="url(#p-brick)" stroke="#e7dfcf" stroke-width="2"/>`; }
+  document.getElementById('hdBrick').innerHTML=s+`<rect x="150" y="20" width="40" height="200" fill="none" class="o"/>`;
+  s=''; for(let y=180;y>20;y-=38){ const h=Math.min(38,y-20); s+=`<rect x="230" y="${y-h}" width="80" height="${h}" fill="url(#p-cmu)" stroke="#e7dfcf" stroke-width="2"/>`; }
+  document.getElementById('hdCmu').innerHTML=s+`<rect x="230" y="20" width="80" height="160" fill="none" class="o"/>`;
+})();
+</script>
+<script src="js/app.js"></script>
+</body></html>

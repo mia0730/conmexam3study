@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>5 · CMU Lab — CONM 1200 Exam 3</title>
+<link rel="stylesheet" href="css/style.css"><script src="js/diagrams.js"></script></head>
+<body style="--accent:var(--lab)">
+<main class="wrap">
+  <div class="lesson-hero">
+    <div class="kicker">Lesson 5 · CMU lab</div>
+    <h1>The CMU Lab: Specs, Reinforcement &amp; Coursing</h1>
+    <p class="lede">Three numbers and two ratios. Learn this page and you've got three exam questions (Practice Q11–13 / MC Q11–13) basically for free.</p>
+    <div class="toc"><a href="#s1">Lab specs</a><a href="#s2">Joint reinforcement</a><a href="#s3">Brick ↔ CMU coursing</a></div>
+  </div>
+
+  <section class="topic" id="s1"><span class="num">5.1</span>
+    <h2>The lab wall specs: 6 · ⅜ · concave</h2>
+    <div class="grid-dia">
+      <figure class="dia">
+        <svg viewBox="0 0 520 280" role="img" aria-label="CMU lab wall specs">
+          <!-- section of 6in wall, 3 courses -->
+          <text x="90" y="22" class="lbl-m" text-anchor="middle">SECTION</text>
+          <g>
+            <rect x="60" y="40" width="64" height="70" fill="url(#p-cmu)" class="o"/>
+            <rect x="60" y="110" width="64" height="8" class="f-mortar o"/>
+            <rect x="60" y="118" width="64" height="70" fill="url(#p-cmu)" class="o"/>
+            <rect x="60" y="188" width="64" height="8" class="f-mortar o"/>
+            <rect x="60" y="196" width="64" height="70" fill="url(#p-cmu)" class="o"/>
+            <path d="M124 110 Q116 114 124 118" fill="#fff" stroke="#1d2433"/><path d="M124 188 Q116 192 124 196" fill="#fff" stroke="#1d2433"/>
+          </g>
+          <path d="M60 30 h64" class="dim" marker-start="url(#m-arrow)" marker-end="url(#m-arrow)"/>
+          <text x="140" y="60" class="lbl-b">6" nominal CMU</text><text x="140" y="78" class="lbl-s">(actual 5⅝" thick)</text>
+          <path d="M130 114 H200" class="lead"/><text x="206" y="112" class="lbl-b">⅜" mortar joints</text><text x="206" y="130" class="lbl-s">bed + head joints</text>
+          <path d="M126 192 C150 200 180 210 200 210" class="lead"/><text x="206" y="208" class="lbl-b">Concave tooled joint</text><text x="206" y="226" class="lbl-s">compacted, sheds water</text>
+          <!-- big concave zoom -->
+          <g transform="translate(400,140)">
+            <circle r="56" fill="#fff" stroke="#6a4c93" stroke-width="2"/>
+            <rect x="-56" y="-46" width="60" height="38" fill="url(#p-cmu)"/><rect x="-56" y="8" width="60" height="38" fill="url(#p-cmu)"/>
+            <path d="M-56 -8 H4 Q-10 0 4 8 H-56Z" fill="#cfc6b3" stroke="#1d2433"/>
+            <text x="20" y="4" class="lbl-s">face</text>
+          </g>
+        </svg>
+      </figure>
+      <div>
+        <table class="t"><tr><th>Spec</th><th>Value from lab slides</th></tr>
+          <tr><td class="k">Wall thickness</td><td><b>6-inch nominal</b> CMU</td></tr>
+          <tr><td class="k">Mortar joint</td><td><b>⅜ inch</b></td></tr>
+          <tr><td class="k">Joint profile</td><td><b>Concave</b>, tooled</td></tr></table>
+        <div class="callout hook"><b>Memory hook</b><p>"<b>Six</b>-inch wall, <b>three-eighths</b> joint, <b>cave</b> it in." — 6 · ⅜ · concave.</p></div>
+        <div class="callout note"><b>Why these make sense</b><p>⅜" is the standard joint for CMU (nominal = actual + ⅜"). Concave is the best water-shedding tooled profile.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="topic" id="s2"><span class="num">5.2</span>
+    <h2>Ladder &amp; truss joint reinforcement</h2>
+    <div class="grid-dia">
+      <figure class="dia">
+        <div class="slider-row">Vertical spacing:
+          <input type="range" id="jrS" min="1" max="3" step="1" value="2" aria-label="spacing in courses">
+          <span id="jrLbl" class="pill">16 in o.c.</span>
+        </div>
+        <div class="dia-controls" data-chips="jrKind"><button class="chip on" data-v="ladder">Ladder</button><button class="chip" data-v="truss">Truss</button></div>
+        <div id="jrBox"></div>
+        <figcaption>Blue lines = reinforced bed joints. Drag the slider: 8″ → every course, 16″ → every 2nd, 24″ → every 3rd.</figcaption>
+      </figure>
+      <div>
+        <p><b>Joint reinforcement</b> is a prefabricated wire grid laid in the mortar to improve joint strength (and control cracking). Usually <b>9-gauge galvanized steel</b>, sold in <b>10-ft lengths</b>, in two shapes:</p>
+        <ul class="tight"><li><b>Ladder</b> — two side rods with straight cross rungs</li><li><b>Truss</b> — two side rods with a zig-zag diagonal</li></ul>
+        <div class="callout exam"><b>Where does it go?</b><p>In the <b>horizontal mortar bed joints</b> — never in the vertical head joints, never on the face of the wall.</p></div>
+        <div class="callout exam"><b>The math</b><p>Each CMU course = <b>8 in</b> (with joint). <b>16 in o.c. ÷ 8 in = 2</b> → reinforcement in <b>every second course</b> (the reinforced joints are <b>two courses apart</b>).</p></div>
+      </div>
+    </div>
+    <div class="qc" data-a="3"><div class="qh">Quick check</div><div class="qq">If each CMU course is 8 in high including mortar, how many courses apart is joint reinforcement placed for 16 in on center vertically?</div>
+      <div class="opts"><button class="opt">Four courses</button><button class="opt">One course</button><button class="opt">Three courses</button><button class="opt">Two courses</button></div>
+      <div class="why">16 ÷ 8 = 2.</div></div>
+    <div class="qc" data-a="1"><div class="qh">Quick check</div><div class="qq">Where is ladder or truss joint reinforcement placed in a CMU wall?</div>
+      <div class="opts"><button class="opt">In the vertical head joints</button><button class="opt">In the horizontal mortar bed joints</button><button class="opt">Against the outside face of the wall</button><button class="opt">Across the top of the footing only</button></div>
+      <div class="why">It lies flat in the bed joint, embedded in mortar.</div></div>
+  </section>
+
+  <section class="topic" id="s3"><span class="num">5.3</span>
+    <h2>Brick ↔ CMU coursing: 3 to 1</h2>
+    <div class="grid-dia">
+      <figure class="dia"><div data-dia="cmuBrick"></div><figcaption>Green dashed lines = where brick and block bed joints line up — every 8 inches.</figcaption></figure>
+      <div>
+        <p class="big">3 modular brick courses = 1 CMU course = 8 in</p>
+        <p>(Including the mortar joints.) A modular brick course is about <b>2⅔"</b> tall; three of them stack to 8". That's why modular brick and CMU work together in a cavity wall — their bed joints line up every 8" so ties and joint reinforcement can cross the cavity.</p>
+        <div class="callout hook"><b>Also remember</b><p>12 modular bricks (with joints) take up the same volume as 1 CMU.</p></div>
+        <div class="calc" style="margin-top:14px">
+          <label for="hIn"><b>Try it — wall height:</b></label>
+          <input type="range" id="hIn" min="8" max="96" step="8" value="24">
+          <span class="pill" id="hOut"></span>
+        </div>
+        <p id="hRes" style="font-weight:600"></p>
+      </div>
+    </div>
+    <div class="qc" data-a="0"><div class="qh">Quick check</div><div class="qq">How many standard modular brick courses match the height of one 8-inch CMU course (with joints)?</div>
+      <div class="opts"><button class="opt">Three</button><button class="opt">One</button><button class="opt">Two</button><button class="opt">Four</button></div>
+      <div class="why">3 × 2⅔" = 8".</div></div>
+  </section>
+
+  <div class="done-row"><a class="btn ghost" href="cavity-walls.html">← Cavity Walls</a><button class="btn" data-done>Mark this lesson done</button><a class="btn ghost" href="wood.html">Next: Lumber →</a></div>
+</main>
+<script>
+let jrK='ladder';
+function jrDraw(){ const n=+document.getElementById('jrS').value; document.getElementById('jrLbl').textContent=(n*8)+' in o.c.'; document.getElementById('jrBox').innerHTML=DIA.jointReinf(n,jrK); }
+function jrKind(v){ jrK=v; jrDraw(); }
+document.getElementById('jrS').addEventListener('input',jrDraw);
+function hDraw(){ const h=+document.getElementById('hIn').value; document.getElementById('hOut').textContent=h+' in ('+(h/12).toFixed(2).replace(/\.00$/,'')+' ft)'; document.getElementById('hRes').innerHTML=`${h} in tall = <span style="color:var(--cmu-d)">${h/8} CMU courses</span> = <span style="color:var(--brick)">${3*h/8} modular brick courses</span>`; }
+document.getElementById('hIn').addEventListener('input',hDraw);
+document.addEventListener('DOMContentLoaded',()=>{jrDraw();hDraw();});
+</script>
+<script src="js/app.js"></script>
+</body></html>

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Practice Quiz — CONM 1200 Exam 3</title>
+<link rel="stylesheet" href="css/style.css"><script src="js/diagrams.js"></script><script src="js/quizdata.js"></script></head>
+<body style="--accent:var(--brick)">
+<main class="wrap">
+  <div class="lesson-hero">
+    <div class="kicker">Practice</div>
+    <h1>Practice Quiz</h1>
+    <p class="lede">Pick a mode. Wrong answers get saved to <b>"Review my misses"</b> so you can drill just the ones you don't know yet.</p>
+  </div>
+  <div class="quiz-shell">
+    <div id="menu">
+      <div class="modes">
+        <button class="mode" data-mode="exam"><span class="n">25 QUESTIONS · IN ORDER</span><b>Exam simulation</b><span>Your instructor's multiple-choice quiz, scored at the end.</span></button>
+        <button class="mode" data-mode="mix"><span class="n">68 QUESTIONS · SHUFFLED</span><b>Shuffle everything</b><span>Instructor quiz + 43 bonus lecture questions, answers shuffled.</span></button>
+        <button class="mode" data-mode="written"><span class="n">25 QUESTIONS</span><b>Short-answer practice</b><span>Type your answer, then compare with the answer key and grade yourself.</span></button>
+        <button class="mode" data-mode="lightning"><span class="n">10 RANDOM</span><b>Lightning round</b><span>Quick 10 from everything. Great for the bus.</span></button>
+        <button class="mode" data-mode="misses"><span class="n" id="missN">0 SAVED</span><b>Review my misses</b><span>Only questions you've gotten wrong.</span></button>
+      </div>
+      <div class="dia-controls" id="topicChips" style="justify-content:center"></div>
+      <p style="text-align:center;font-size:.88rem;color:var(--ink-3)">Topic filter applies to Shuffle, Short-answer and Lightning. <a href="#" id="clearMiss">Clear saved misses</a></p>
+    </div>
+    <div id="stage" style="display:none"></div>
+  </div>
+  <div class="done-row"><a class="btn ghost" href="index.html">← Home</a><a class="btn ghost" href="flashcards.html">Flashcards →</a></div>
+</main>
+<script>
+(function(){
+  const S=window.STORE||{get:(k,d)=>d,set:()=>{}};
+  let topic='all';
+  const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+  const all=(set)=>QBANK[set].map((q,i)=>Object.assign({set,id:set+':'+i},q));
+  const missKey='missed';
+  const getMiss=()=> (window.STORE?STORE.get(missKey,[]):[]);
+  const setMiss=v=> window.STORE&&STORE.set(missKey,v);
+  function paintMiss(){ document.getElementById('missN').textContent=getMiss().length+' SAVED'; }
+
+  // topic chips
+  const tc=document.getElementById('topicChips');
+  tc.innerHTML=`<button class="chip on" data-v="all">All topics</button>`+Object.entries(TOPICS).map(([k,v])=>`<button class="chip" data-v="${k}">${v}</button>`).join('');
+  tc.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{tc.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));c.classList.add('on');topic=c.dataset.v;}));
+  const ft=l=> topic==='all'?l:l.filter(q=>q.t===topic);
+
+  let st=null;
+  function start(mode){
+    let list;
+    if(mode==='exam') list=all('instructor');
+    else if(mode==='mix') list=shuffle(ft(all('instructor').concat(all('bonus'))));
+    else if(mode==='written') list=ft(all('practice'));
+    else if(mode==='lightning') list=shuffle(ft(all('instructor').concat(all('bonus')))).slice(0,10);
+    else if(mode==='misses'){ const m=getMiss(); list=m.map(id=>{const [s,i]=id.split(':'); return Object.assign({set:s,id},QBANK[s][+i]);}).filter(Boolean); if(!list.length){ alert('No saved misses yet — nice! Try a quiz first.'); return; } list=shuffle(list); }
+    if(!list.length){ alert('No questions for that topic in this mode.'); return; }
+    if(mode!=='exam') list=list.map(q=>{ if(!q.o) return q; const idx=shuffle(q.o.map((_,i)=>i)); return Object.assign({},q,{o:idx.map(i=>q.o[i]),a:idx.indexOf(q.a)}); });
+    st={mode,list,i:0,score:0,graded:0,wrong:[]};
+    document.getElementById('menu').style.display='none'; document.getElementById('stage').style.display='block';
+    render();
+  }
+  function render(){
+    const q=st.list[st.i], n=st.list.length, stage=document.getElementById('stage');
+    const fig = q.dia ? `<div class="qfig">${DIA[q.dia[0]](...q.dia[1])}</div>` : '';
+    let body='';
+    if(q.o){ body=`<div class="opts">${q.o.map((o,k)=>`<button class="opt" data-k="${k}"><b>${'ABCD'[k]}.</b> ${o}</button>`).join('')}</div><div class="why"></div>`; }
+    else { body=`<textarea placeholder="Type your answer in your own words…"></textarea><div style="margin-top:10px"><button class="btn ghost" id="reveal">Show answer key</button></div><div class="model"><b>Answer key:</b> ${q.m}</div><div class="selfgrade"><button class="btn ok" data-g="1">✓ Got it</button><button class="btn ghost" data-g="0.5">~ Partly</button><button class="btn ghost" data-g="0" style="border-color:var(--bad);color:var(--bad)">✗ Missed it</button></div>`; }
+    stage.innerHTML=`<div class="quiz"><div class="meta"><span>Q${st.i+1} / ${n} · ${TOPICS[q.t]||''}</span><span>Score: ${fmt(st.score)} / ${st.graded}</span></div>
+      <div class="scorebar"><i style="width:${(st.i/n)*100}%"></i></div>
+      ${fig}<div class="qtext">${q.q}</div>${body}
+      <div class="qnav"><button class="btn ghost" id="quit">✕ Quit</button><button class="btn" id="next" style="display:none">${st.i+1<n?'Next →':'See results'}</button></div></div>`;
+    stage.querySelector('#quit').onclick=back;
+    const next=stage.querySelector('#next'); next.onclick=()=>{ st.i++; st.i<n?render():results(); };
+    if(q.o){
+      const btns=stage.querySelectorAll('button.opt');
+      btns.forEach(b=>b.onclick=()=>{ const k=+b.dataset.k; btns.forEach((x,j)=>{x.disabled=true; if(j===q.a) x.classList.add('right');}); const ok=k===q.a; if(!ok){ b.classList.add('wrong'); st.wrong.push(q); addMiss(q.id);} else { st.score++; removeMiss(q.id);} st.graded++;
+        const w=stage.querySelector('.why'); w.innerHTML=(ok?'<b>Correct! </b>':'<b>Answer: '+'ABCD'[q.a]+'. </b>')+q.e; w.classList.add('show'); next.style.display='inline-flex'; stage.querySelector('.meta span:last-child').textContent='Score: '+fmt(st.score)+' / '+st.graded; });
+    } else {
+      stage.querySelector('#reveal').onclick=()=>{ stage.querySelector('.model').classList.add('show'); stage.querySelector('.selfgrade').classList.add('show'); };
+      stage.querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>{ const g=+b.dataset.g; st.score+=g; st.graded++; if(g<1){ st.wrong.push(q); addMiss(q.id);} else removeMiss(q.id); st.i++; st.i<n?render():results(); });
+    }
+  }
+  const fmt=v=> (Math.round(v*10)/10).toString();
+  function addMiss(id){ const m=getMiss(); if(!m.includes(id)){ m.push(id); setMiss(m);} }
+  function removeMiss(id){ setMiss(getMiss().filter(x=>x!==id)); }
+  function results(){
+    const n=st.list.length, pct=Math.round(st.score/n*100);
+    const msg = pct>=90?'Exam-ready. 🔥':pct>=75?'Solid — drill the misses below.':pct>=60?'Getting there. Re-read the lessons for the misses.':'Go back through the lessons, then try again.';
+    document.getElementById('stage').innerHTML=`<div class="quiz"><div class="kicker">Results</div><div class="result-big">${pct}%</div><p style="font-size:1.1rem">${fmt(st.score)} of ${n} · ${msg}</p>
+      ${st.wrong.length?`<h3>Review these</h3><ol class="missed">${st.wrong.map(q=>`<li><b>${q.q}</b><br><span style="color:var(--ok)">${q.o?q.o[q.a]:q.m}</span></li>`).join('')}</ol>`:'<p>No misses! 🎉</p>'}
+      <div class="qnav"><button class="btn ghost" id="b">← Modes</button><button class="btn" id="r">Try again</button></div></div>`;
+    document.getElementById('b').onclick=back; document.getElementById('r').onclick=()=>start(st.mode);
+  }
+  function back(){ document.getElementById('stage').style.display='none'; document.getElementById('menu').style.display='block'; paintMiss(); }
+  document.querySelectorAll('.mode').forEach(b=>b.addEventListener('click',()=>start(b.dataset.mode)));
+  document.getElementById('clearMiss').addEventListener('click',e=>{e.preventDefault(); setMiss([]); paintMiss();});
+  window.addEventListener('load',paintMiss);
+  const m=new URLSearchParams(location.search).get('mode'); if(m) window.addEventListener('load',()=>start(m));
+})();
+</script>
+<script src="js/app.js"></script>
+</body></html>

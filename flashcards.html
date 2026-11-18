@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flashcards — CONM 1200 Exam 3</title>
+<link rel="stylesheet" href="css/style.css"><script src="js/diagrams.js"></script><script src="js/quizdata.js"></script></head>
+<body style="--accent:var(--lab)">
+<main class="wrap">
+  <div class="lesson-hero">
+    <div class="kicker">Flashcards</div>
+    <h1>Flip, Say It Out Loud, Sort</h1>
+    <p class="lede">Read the front, <b>say the answer out loud</b>, then tap to flip. Mark it <b>Know it</b> or <b>Still learning</b>. Keys: <kbd>Space</kbd> flip · <kbd>→</kbd> know it · <kbd>←</kbd> still learning.</p>
+  </div>
+  <div class="fc-filter" id="fcTopics"></div>
+  <p style="text-align:center;margin:12px 0 0"><span class="pill" id="fcCount"></span></p>
+  <div class="fc-stage">
+    <div class="fc" id="card"><div class="face front"><span class="tagline" id="fTag"></span><div class="mini" id="fMini"></div><div class="term" id="fTerm"></div><p style="color:var(--ink-3);font-size:.85rem;margin-top:14px">tap to flip</p></div>
+      <div class="face back"><span class="tagline">answer</span><div class="mini" id="bMini"></div><div class="ans" id="bAns"></div></div></div>
+  </div>
+  <div class="fc-ctl">
+    <button class="btn ghost" id="learn" style="border-color:var(--bad);color:var(--bad)">← Still learning</button>
+    <button class="btn ghost" id="flip">Flip</button>
+    <button class="btn ok" id="know">Know it →</button>
+  </div>
+  <div class="fc-ctl"><button class="chip" id="shuf">🔀 Shuffle</button><button class="chip" id="onlyLearn">Only "still learning"</button><button class="chip" id="reset">Reset progress</button></div>
+  <div class="done-row"><a class="btn ghost" href="practice.html">← Practice Quiz</a><a class="btn ghost" href="review.html">Last-Minute Sheet →</a></div>
+</main>
+<script>
+(function(){
+  const get=(k,d)=>window.STORE?STORE.get(k,d):d, set=(k,v)=>window.STORE&&STORE.set(k,v);
+  let topic='all', onlyL=false, deck=[], i=0;
+  const known=()=>get('fcKnown',{});
+  function build(shuf){
+    deck = FLASH.map((c,k)=>Object.assign({k},c)).filter(c=>topic==='all'||c.t===topic).filter(c=>!onlyL||!known()[c.k]);
+    if(shuf) for(let a=deck.length-1;a>0;a--){const b=Math.floor(Math.random()*(a+1));[deck[a],deck[b]]=[deck[b],deck[a]];}
+    i=0; show();
+  }
+  function show(){
+    const card=document.getElementById('card'); card.classList.remove('flip');
+    const kn=known(); const nKnown=FLASH.filter((c,k)=>(topic==='all'||c.t===topic)&&kn[k]).length, tot=FLASH.filter(c=>topic==='all'||c.t===topic).length;
+    document.getElementById('fcCount').textContent = deck.length? `Card ${i+1} of ${deck.length} · ${nKnown}/${tot} known` : `All done here — ${nKnown}/${tot} known 🎉`;
+    if(!deck.length){ ['fTerm','bAns','fMini','bMini','fTag'].forEach(id=>document.getElementById(id).innerHTML=''); document.getElementById('fTerm').textContent='Deck cleared!'; return; }
+    const c=deck[i];
+    document.getElementById('fTag').textContent=TOPICS[c.t];
+    document.getElementById('fTerm').textContent=c.f;
+    document.getElementById('bAns').textContent=c.b;
+    document.getElementById('fMini').innerHTML='';
+    document.getElementById('bMini').innerHTML= c.dia? DIA[c.dia[0]](...c.dia[1]) : '';
+  }
+  function mark(k){ if(!deck.length) return; const kn=known(); if(k) kn[deck[i].k]=1; else delete kn[deck[i].k]; set('fcKnown',kn);
+    if(onlyL && k){ deck.splice(i,1); if(i>=deck.length) i=0; } else { i=(i+1)%deck.length; } show(); }
+  const tp=document.getElementById('fcTopics');
+  tp.innerHTML=`<button class="chip on" data-v="all">All</button>`+Object.entries(TOPICS).map(([k,v])=>`<button class="chip" data-v="${k}">${v}</button>`).join('');
+  tp.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{tp.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));c.classList.add('on');topic=c.dataset.v;build(false);});
+  document.getElementById('card').onclick=()=>document.getElementById('card').classList.toggle('flip');
+  document.getElementById('flip').onclick=()=>document.getElementById('card').classList.toggle('flip');
+  document.getElementById('know').onclick=()=>mark(1);
+  document.getElementById('learn').onclick=()=>mark(0);
+  document.getElementById('shuf').onclick=()=>build(true);
+  document.getElementById('onlyLearn').onclick=e=>{onlyL=!onlyL;e.target.classList.toggle('on',onlyL);build(false);};
+  document.getElementById('reset').onclick=()=>{set('fcKnown',{});build(false);};
+  document.addEventListener('keydown',e=>{ if(e.code==='Space'){e.preventDefault();document.getElementById('card').classList.toggle('flip');} if(e.key==='ArrowRight')mark(1); if(e.key==='ArrowLeft')mark(0); });
+  window.addEventListener('load',()=>build(false));
+})();
+</script>
+<script src="js/app.js"></script>
+</body></html>

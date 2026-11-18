@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>7 · Engineered Wood — CONM 1200 Exam 3</title>
+<link rel="stylesheet" href="css/style.css"><script src="js/diagrams.js"></script></head>
+<body style="--accent:var(--woodc)">
+<main class="wrap">
+  <div class="lesson-hero">
+    <div class="kicker">Lesson 7 · Manufactured wood products</div>
+    <h1>Panels, I-Joists, SIPs &amp; Joinery</h1>
+    <p class="lede">Engineers take wood apart (veneers, strands, particles) and glue it back together to make it bigger, straighter and more predictable. Learn what each product is <i>made of</i> and you can answer anything about it.</p>
+    <div class="toc"><a href="#s1">Glulam &amp; LVL</a><a href="#s2">Plywood &amp; veneer grades</a><a href="#s3">OSB &amp; particleboard</a><a href="#s4">APA panel stamp</a><a href="#s5">Trusses</a><a href="#s6">I-joists</a><a href="#s7">SIPs</a><a href="#s8">Joinery</a></div>
+  </div>
+
+  <section class="topic" id="s1"><span class="num">7.1</span>
+    <h2>Engineered framing: Glulam &amp; LVL</h2>
+    <div class="grid-dia">
+      <figure class="dia">
+        <svg viewBox="0 0 520 240" role="img" aria-label="Glulam and LVL">
+          <text x="120" y="22" class="lbl-b" text-anchor="middle">GLULAM</text>
+          <g transform="translate(40,40)"><g id="glu"></g></g>
+          <text x="120" y="222" class="lbl-s" text-anchor="middle">lumber laminations 1–2" thick, glued</text>
+          <text x="380" y="22" class="lbl-b" text-anchor="middle">LVL</text>
+          <g transform="translate(330,40)"><g id="lvl"></g></g>
+          <text x="380" y="222" class="lbl-s" text-anchor="middle">thin veneers pressed &amp; glued</text>
+          <text x="260" y="238" class="lbl-m" text-anchor="middle">→ grain runs LENGTHWISE in every layer (both)</text>
+        </svg>
+      </figure>
+      <div>
+        <p><b>Glulam</b> (glue-laminated timber): select lumber laminations, end-joined with finger or scarf joints, glued with adhesives chosen for expected moisture.</p>
+        <p><b>Why laminate?</b> To create <b>sizes and shapes not available naturally</b> — huge beams, arches, curves (churches, lodges) — and to <b>improve quality</b> by removing/controlling defects and grain direction.</p>
+        <p><b>LVL</b> (laminated veneer lumber): thin veneers glued with grain all parallel. Used for beams, headers, and I-joist flanges.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="topic" id="s2"><span class="num">7.2</span>
+    <h2>Plywood &amp; how veneers are graded</h2>
+    <div class="grid-dia">
+      <figure class="dia">
+        <svg viewBox="0 0 600 290" role="img" aria-label="Exploded plywood layers">
+          <g id="plyLayers"></g>
+          <text x="20" y="282" class="lbl-s">Odd # of plies · grain alternates 90° · face &amp; back veneers run the same way</text>
+        </svg>
+      </figure>
+      <div>
+        <ul class="tight">
+          <li>Thin veneers (rotary-cut — peeled off a spinning log) glued together</li>
+          <li><b>Odd number</b> of veneers, <b>alternating direction</b>, face veneers parallel</li>
+          <li>4' × 8' panels, ¼" to 1" thick</li>
+          <li>Uses like OSB (sheathing), plus exposed/painted surfaces and concrete formwork; costs more than OSB</li>
+        </ul>
+        <div class="callout hook"><b>Why cross the grain?</b><p>Wood barely moves along its grain but moves a lot across it. Crossing layers locks each other in place → stable, strong both directions.</p></div>
+      </div>
+    </div>
+    <h3>Softwood plywood veneer grades</h3>
+    <figure class="dia"><svg viewBox="0 -18 900 188" role="img" aria-label="Veneer grades A B C-plugged C D"><g id="grades"></g></svg>
+      <figcaption>Grade is based on the smoothness &amp; integrity of the veneer and the <b>number and size of defects</b> (knots, splits, holes). B and better are sanded smooth. Finish areas may need A; most formwork is B/C.</figcaption></figure>
+    <div class="callout exam"><b>On the exam</b><p>What determines a softwood plywood veneer grade? <b>The size and number of allowable defects</b> (such as knots and splits). Not span rating, width, or finish coats.</p></div>
+  </section>
+
+  <section class="topic" id="s3"><span class="num">7.3</span>
+    <h2>Non-veneered panels: OSB, particleboard, fiberboard</h2>
+    <div class="grid3">
+      <figure class="dia" style="margin:0;border-color:var(--ok)"><svg viewBox="0 0 200 120"><rect x="10" y="10" width="180" height="100" fill="url(#p-osb)" class="o"/></svg><figcaption><b>OSB (oriented strand board)</b> — long strand/flake particles in <b>3–5 layers with alternating orientation</b>, glued &amp; compressed. <b>Strongest non-veneered panel</b> (because the strands are oriented). Cheaper than plywood. <b>Sheathing for floors, roofs, walls.</b></figcaption></figure>
+      <figure class="dia" style="margin:0"><svg viewBox="0 0 200 120"><rect x="10" y="10" width="180" height="100" fill="url(#p-particle)" class="o"/></svg><figcaption><b>Particleboard</b> — small particles, <b>no orientation</b>. <b>Not for sheathing.</b> Low-moisture uses; cheap furniture &amp; cabinets with a thin hardwood veneer or laminate face.</figcaption></figure>
+      <figure class="dia" style="margin:0"><svg viewBox="0 0 200 120"><rect x="10" y="10" width="180" height="100" fill="#b9946a" class="o"/><rect x="10" y="10" width="180" height="100" fill="url(#p-particle)" opacity=".25"/></svg><figcaption><b>Fiberboard</b> — wood broken down to fibers and pressed (e.g. MDF); smooth, uniform.</figcaption></figure>
+    </div>
+    <div class="callout exam" style="margin-top:16px"><b>On the exam</b><p>Two common <b>structural wood sheathing</b> products: <b>plywood</b> and <b>OSB</b>.</p></div>
+  </section>
+
+  <section class="topic" id="s4"><span class="num">7.4</span>
+    <h2>Reading an APA panel stamp</h2>
+    <div class="grid-dia">
+      <figure class="dia">
+        <svg viewBox="0 0 520 280" role="img" aria-label="Span rating explained">
+          <rect x="120" y="20" width="280" height="120" rx="8" fill="#fff" stroke="#1d2433" stroke-width="2"/>
+          <text x="260" y="48" class="lbl-b" text-anchor="middle">RATED SHEATHING</text>
+          <text x="260" y="90" class="lbl-b" text-anchor="middle" style="font-size:32px">24/16</text>
+          <text x="260" y="112" class="lbl" text-anchor="middle">7/16 INCH · EXPOSURE 1</text>
+          <text x="260" y="130" class="lbl-s" text-anchor="middle">sized for spacing · mill 000</text>
+          <!-- roof -->
+          <g transform="translate(20,170)"><text x="0" y="0" class="lbl">ROOF: rafters ≤ 24" o.c.</text>
+            <rect x="0" y="14" width="200" height="8" fill="url(#p-osb)" class="o"/><g id="raf"></g></g>
+          <g transform="translate(290,170)"><text x="0" y="0" class="lbl">FLOOR: joists ≤ 16" o.c.</text>
+            <rect x="0" y="14" width="200" height="8" fill="url(#p-osb)" class="o"/><g id="jst"></g></g>
+          <path d="M200 140 L120 158" class="lead"/><path d="M320 140 L380 158" class="lead"/>
+        </svg>
+      </figure>
+      <div>
+        <p>The <b>APA</b> rates panels used for sheathing and siding on <b>structural adequacy</b>, <b>dimensional stability</b>, and <b>durability of the adhesive</b>.</p>
+        <ul class="tight">
+          <li><b>Span rating</b> (e.g. 24/16): <b>bigger number = roof</b> rafter spacing, <b>smaller = floor</b> joist spacing, in inches</li>
+          <li><b>Exposure durability:</b> <b>Exterior</b> = high-quality veneers + waterproof glue, for continuous exposure (siding). <b>Exposure 1</b> = waterproof glue, lower-quality veneers, for short-term exposure during construction (subfloors, sheathing) — the most common rating.</li>
+          <li>Panels are undersized ⅛" to allow spacing between them.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="topic" id="s5"><span class="num">7.5</span>
+    <h2>Wood trusses</h2>
+    <div class="grid-dia">
+      <figure class="dia">
+        <svg viewBox="0 0 560 250" role="img" aria-label="Roof truss vocabulary">
+          <polygon points="40,180 280,50 520,180" fill="none"/>
+          <g stroke="#9b6527" stroke-width="10" stroke-linecap="round" fill="none">
+            <path d="M30 186 L280 50 L530 186"/><path d="M60 180 H500"/>
+          </g>
+          <g stroke="#c08a4b" stroke-width="6" stroke-linecap="round"><path d="M160 180 L200 116"/><path d="M200 116 L280 180"/><path d="M280 180 L360 116"/><path d="M360 116 L400 180"/><path d="M280 50 V180"/></g>
+          <g fill="#7b8293" stroke="#1d2433"><rect x="268" y="42" width="24" height="18"/><rect x="74" y="168" width="22" height="18"/><rect x="464" y="168" width="22" height="18"/><rect x="268" y="172" width="24" height="16"/><rect x="150" y="172" width="20" height="16"/><rect x="390" y="172" width="20" height="16"/></g>
+          <text x="150" y="98" class="lbl" text-anchor="end">top chord</text>
+          <text x="280" y="214" class="lbl" text-anchor="middle">bottom chord</text>
+          <text x="330" y="140" class="lbl">webs</text>
+          <text x="280" y="30" class="lbl" text-anchor="middle">peak</text>
+          <text x="80" y="214" class="lbl" text-anchor="middle">heel</text>
+          <path d="M486 160 L520 120" class="lead"/><text x="470" y="112" class="lbl">truss plate</text><text x="470" y="128" class="lbl-s">(toothed connector)</text>
+          <text x="280" y="242" class="lbl-s" text-anchor="middle">a set of interconnected TRIANGLES</text>
+        </svg>
+      </figure>
+      <div>
+        <ul class="tight">
+          <li>Mostly <b>factory-built (pre-engineered)</b> from 2×4 or 2×6 lumber joined by <b>toothed plate fasteners</b></li>
+          <li>Members form an array of <b>interconnected triangles</b></li>
+          <li>Stock or special order, many shapes: <b>parallel-chord</b> trusses for floors &amp; flat roofs; <b>sloping top-chord</b> trusses for pitched roofs</li>
+        </ul>
+        <div class="callout note"><b>Why trusses or I-joists instead of 2× lumber?</b><p>More efficient use of wood · span farther / carry more · more dimensionally stable · faster to frame (often <b>24" o.c. or more</b>).</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="topic" id="s6"><span class="num">7.6</span>
+    <h2>Wood I-joists</h2>
+    <div class="grid-dia">
+      <figure class="dia">
+        <svg viewBox="0 0 520 280" role="img" aria-label="Wood I-joist section and elevation">
+          <text x="100" y="22" class="lbl-m" text-anchor="middle">SECTION</text>
+          <rect x="60" y="34" width="80" height="34" fill="url(#p-grainv)" class="o"/>
+          <rect x="93" y="68" width="14" height="150" fill="url(#p-osb)" class="o"/>
+          <rect x="60" y="218" width="80" height="34" fill="url(#p-grainv)" class="o"/>
+          <path d="M140 50 H190" class="lead"/><text x="196" y="46" class="lbl">FLANGE</text><text x="196" y="62" class="lbl-s">solid wood or LVL</text>
+          <path d="M107 140 H190" class="lead"/><text x="196" y="136" class="lbl">WEB</text><text x="196" y="152" class="lbl-s">OSB (or plywood)</text>
+          <path d="M40 34 V252" class="dim" marker-start="url(#m-arrow)" marker-end="url(#m-arrow)"/><text x="30" y="146" class="lbl-s" text-anchor="middle" transform="rotate(-90 30 146)">9½" – 24" deep</text>
+          <text x="400" y="22" class="lbl-m" text-anchor="middle">SPAN TABLE (from the maker)</text>
+          <rect x="310" y="34" width="190" height="130" rx="6" fill="#fff" class="o"/>
+          <g><text x="320" y="56" class="lbl-s" font-weight="700">Series · Depth · Spacing → Max span</text>
+            <text x="320" y="80" class="lbl-s">series A · 11⅞" · 16" o.c. → ___</text>
+            <text x="320" y="100" class="lbl-s">series A · 11⅞" · 24" o.c. → ___</text>
+            <text x="320" y="120" class="lbl-s">series B · 14" · 16" o.c. → ___</text>
+            <text x="320" y="140" class="lbl-s">(each maker publishes its own)</text></g>
+          <text x="400" y="190" class="lbl" text-anchor="middle">proprietary product →</text><text x="400" y="208" class="lbl" text-anchor="middle">check the MANUFACTURER'S</text><text x="400" y="226" class="lbl" text-anchor="middle">span tables</text>
+        </svg>
+      </figure>
+      <div>
+        <ul class="tight">
+          <li>I-shaped: <b>flanges</b> of solid wood or LVL, <b>web of OSB or plywood</b></li>
+          <li>Structurally efficient, dimensionally stable, light; you can cut holes in the web for ducts/pipes</li>
+          <li>Typically <b>9½"–24" deep</b>, <b>up to 40 ft+</b> long; cost comparable to 2× lumber</li>
+          <li><b>Proprietary</b> — each manufacturer designs its own and publishes <b>structural data, span tables, and connection details</b></li>
+        </ul>
+        <div class="callout exam"><b>On the exam</b><p>Common I-joist web material = <b>OSB</b>. Verify allowable span in the <b>manufacturer's span tables</b> (for that specific series, depth, and loading).</p></div>
+      </div>
+    </div>
+    <div class="qc" data-a="2"><div class="qh">Quick check</div><div class="qq">Which option pairs a common wood I-joist web material with the source for its allowable span?</div>
+      <div class="opts"><button class="opt">Solid sawn lumber and a wood veneer grade chart</button><button class="opt">Gypsum board and a roof covering guide</button><button class="opt">Oriented strand board and the manufacturer's span tables</button><button class="opt">Rigid foam and a masonry lintel schedule</button></div>
+      <div class="why">OSB web + manufacturer's span tables.</div></div>
+  </section>
+
+  <section class="topic" id="s7"><span class="num">7.7</span>
+    <h2>Structural Insulated Panels (SIPs)</h2>
+    <div class="grid-dia">
+      <figure class="dia">
+        <svg viewBox="0 0 520 260" role="img" aria-label="SIP layers">
+          <g transform="translate(40,30)">
+            <polygon points="0,40 18,40 18,200 0,200" fill="url(#p-osb)" class="o"/>
+            <polygon points="18,40 98,40 98,200 18,200" fill="#e9f1f7" class="o"/>
+            <polygon points="18,40 98,40 98,200 18,200" fill="url(#p-insul)" opacity=".0"/>
+            <g fill="#cfe0ec"><circle cx="40" cy="70" r="5"/><circle cx="70" cy="100" r="6"/><circle cx="50" cy="140" r="5"/><circle cx="80" cy="170" r="5"/><circle cx="35" cy="185" r="4"/><circle cx="85" cy="60" r="4"/></g>
+            <polygon points="98,40 116,40 116,200 98,200" fill="url(#p-osb)" class="o"/>
+            <polygon points="0,40 116,40 196,-10 80,-10" fill="#f1ead9" class="o"/>
+            <polygon points="116,40 196,-10 196,150 116,200" fill="url(#p-osb)" class="o"/>
+          </g>
+          <path d="M48 150 L250 60" class="lead"/><text x="256" y="58" class="lbl">OSB skin</text>
+          <path d="M100 150 L250 120" class="lead"/><text x="256" y="116" class="lbl">rigid FOAM core</text><text x="256" y="132" class="lbl-s">insulates + (bonded) carries shear</text><text x="256" y="146" class="lbl-s">between the two skins</text>
+          <path d="M150 180 L250 180" class="lead"/><text x="256" y="184" class="lbl">OSB skin</text>
+          <text x="256" y="216" class="lbl-s">common thicknesses: 3½" and 5½"</text>
+          <text x="256" y="232" class="lbl-s">siding / roofing / drywall go over the OSB</text>
+        </svg>
+      </figure>
+      <div>
+        <p>A <b>sandwich panel</b>: two outer sheets of <b>OSB</b> glued to a core of <b>rigid foam plastic insulation</b>. Used in homes and commercial buildings — often to <b>fill in the walls and roof of a heavy timber frame</b>, fastened with special long screws.</p>
+        <div class="callout hook"><b>Think of it as an I-beam</b><p>OSB skins = flanges, foam = web. Bonded together, the foam keeps the skins working as a team (transfers shear) while insulating.</p></div>
+        <div class="callout exam"><b>On the exam</b><p>A SIP has an <b>insulating foam core</b> (not hollow, not solid lumber, not gypsum).</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="topic" id="s8"><span class="num">7.8</span>
+    <h2>Joinery: dovetail, mortise &amp; tenon, steel plates</h2>
+    <div class="grid-dia">
+      <figure class="dia">
+        <svg viewBox="0 0 540 250" role="img" aria-label="Dovetail joint and mortise and tenon">
+          <text x="140" y="22" class="lbl-b" text-anchor="middle">DOVETAIL</text>
+          <path d="M30 60 H250 V150 H30Z" fill="url(#p-grain)" class="o"/>
+          <path d="M100 150 L84 60 H196 L180 150Z" fill="#c99556" class="o2"/>
+          <path d="M100 150 V210 H180 V150" fill="#c99556" class="o"/>
+          <path d="M140 230 v-12" stroke="#b3261e" stroke-width="3" marker-end="url(#m-arrow-red)" transform="rotate(180 140 224)"/>
+          <text x="140" y="246" class="lbl-s" text-anchor="middle">pull straight out → the flare jams. ✘</text>
+          <text x="140" y="44" class="lbl-s" text-anchor="middle">tapered "tail" wider at the end</text>
+          <text x="400" y="22" class="lbl-b" text-anchor="middle">MORTISE &amp; TENON</text>
+          <rect x="320" y="50" width="70" height="170" fill="url(#p-grainv)" class="o"/>
+          <rect x="350" y="110" width="20" height="50" fill="#5c3a17" opacity=".35"/>
+          <rect x="390" y="100" width="130" height="70" fill="url(#p-grain)" class="o"/>
+          <rect x="370" y="122" width="22" height="26" fill="#c99556" class="o"/>
+          <circle cx="360" cy="135" r="4" fill="#5c3a17"/>
+          <text x="355" y="240" class="lbl-s" text-anchor="middle">mortise = hole</text><text x="455" y="190" class="lbl-s" text-anchor="middle">tenon = tongue</text>
+        </svg>
+      </figure>
+      <div>
+        <p>Heavy timber connections are called <b>joinery</b>.</p>
+        <ul class="tight">
+          <li><b>Traditional:</b> mortise-and-tenon, dovetail (old-fashioned look), often pinned with wood pegs</li>
+          <li><b>Modern:</b> steel plates with bolts, nuts &amp; washers (tops of posts squared off to make the connection easier)</li>
+        </ul>
+        <div class="callout exam"><b>On the exam</b><p>A dovetail's <b>flared, tapered shape interlocks</b> with a matching recess and <b>resists straight pullout</b>.</p></div>
+      </div>
+    </div>
+    <div class="qc" data-a="3"><div class="qh">Quick check</div><div class="qq">Which pair correctly describes a structural insulated panel and a dovetail joint?</div>
+      <div class="opts"><button class="opt">A SIP has a hollow core, and a dovetail uses round pins.</button><button class="opt">A SIP has a solid lumber core, and a dovetail relies on a straight butt joint.</button><button class="opt">A SIP has a gypsum core, and a dovetail uses two parallel grooves.</button><button class="opt">A SIP has an insulating foam core, and a dovetail uses interlocking tapered shapes.</button></div>
+      <div class="why">Foam core + interlocking tapered shapes.</div></div>
+  </section>
+
+  <div class="done-row"><a class="btn ghost" href="wood.html">← Lumber</a><button class="btn" data-done>Mark this lesson done</button><a class="btn ghost" href="framing.html">Next: Framing →</a></div>
+</main>
+<script>
+(function(){
+  let g=''; for(let i=0;i<8;i++) g+=`<rect x="0" y="${i*20}" width="160" height="18" fill="url(#p-grain)" class="o"/>`; document.getElementById('glu').innerHTML=g;
+  let l=''; for(let i=0;i<20;i++) l+=`<rect x="0" y="${i*8}" width="100" height="7" fill="${i%2?'#d9a464':'#e4b77a'}" stroke="#9b6527" stroke-width=".6"/>`; document.getElementById('lvl').innerHTML=l;
+  // plywood exploded
+  let p=''; for(let i=0;i<5;i++){ const y=40+i*42, x=60+i*14; const along = i%2===0;
+    p+=`<polygon points="${x},${y+20} ${x+300},${y+20} ${x+360},${y-10} ${x+60},${y-10}" fill="url(#${along?'p-grain':'p-grainv'})" class="o"/>`;
+    p+=`<text x="${x+380}" y="${y+10}" class="lbl-s">${i===0?'face veneer →':(i===4?'back veneer →':(along?'grain ↔':'cross-band ↕'))}</text>`; }
+  p+=`<text x="20" y="22" class="lbl-m">5-PLY (exploded)</text>`; document.getElementById('plyLayers').innerHTML=p;
+  // grades
+  const G=[['A','smooth, sanded; neat repairs only',0,0],['B','solid; small round knots/plugs',2,0],['C-plugged','splits &amp; holes filled',3,0],['C','knots up to ~1½"; small splits',5,1],['D','larger knots &amp; splits',7,2]];
+  let s=''; G.forEach((v,i)=>{ const x=10+i*178; s+=`<rect x="${x}" y="20" width="160" height="96" fill="${i<2?'#ecc994':'#e2b878'}" class="o"/>`;
+    const rng=(k)=>((Math.sin((i+1)*97+k*13.7)+1)/2);
+    for(let k=0;k<v[2];k++){ s+=`<ellipse cx="${x+20+rng(k)*120}" cy="${34+rng(k+5)*68}" rx="${4+k%3*2+(i>3?4:0)}" ry="${3+k%2*2+(i>3?2:0)}" fill="#7a4e22"/>`; if(i===2&&k<3) s+=`<ellipse cx="${x+30+k*45}" cy="${60}" rx="9" ry="6" fill="#d9a35e" stroke="#7a4e22"/>`; }
+    for(let k=0;k<v[3];k++) s+=`<path d="M${x+30+k*60} 110 l8 -26" stroke="#5c3a17" stroke-width="2"/>`;
+    s+=`<text x="${x+80}" y="140" class="lbl-b" text-anchor="middle">${v[0]}</text><text x="${x+80}" y="158" class="lbl-s" text-anchor="middle">${v[1]}</text>`; });
+  s+=`<path d="M20 8 H880" stroke="#b3261e" stroke-width="2" marker-end="url(#m-arrow-red)"/><text x="450" y="-4" class="lbl-s" text-anchor="middle">more &amp; bigger defects → lower grade, cheaper</text>`;
+  document.getElementById('grades').innerHTML=s;
+  let r=''; for(let x=0;x<=200;x+=40) r+=`<rect x="${x}" y="22" width="6" height="40" fill="url(#p-woodsec)" class="o"/>`; document.getElementById('raf').innerHTML=r+`<text x="100" y="80" class="lbl-s" text-anchor="middle">24" spacing</text>`;
+  let j=''; for(let x=0;x<=200;x+=26.6) j+=`<rect x="${x}" y="22" width="6" height="40" fill="url(#p-woodsec)" class="o"/>`; document.getElementById('jst').innerHTML=j+`<text x="100" y="80" class="lbl-s" text-anchor="middle">16" spacing</text>`;
+})();
+</script>
+<script src="js/app.js"></script>
+</body></html>

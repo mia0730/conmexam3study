@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>8 · Framing — CONM 1200 Exam 3</title>
+<link rel="stylesheet" href="css/style.css"><script src="js/diagrams.js"></script></head>
+<body style="--accent:var(--frame)">
+<main class="wrap">
+  <div class="lesson-hero">
+    <div class="kicker">Lesson 8 · Wood framing</div>
+    <h1>Platform Framing, Floors &amp; Roofs</h1>
+    <p class="lede">Build a house in your head, floor by floor: platform → walls → platform → walls → roof → sheathing → felt → shingles. Most framing questions are just "what goes where, which way does it run, what sits on what."</p>
+    <div class="toc"><a href="#s1">Light frame vs heavy timber</a><a href="#s2">Platform vs balloon</a><a href="#s3">Floor framing</a><a href="#s4">Roof shapes</a><a href="#s5">Roof framing</a><a href="#s6">Bird's mouth</a><a href="#s7">Sheathing → felt → shingles</a><a href="#s8">Build sequence</a><a href="#s9">Heavy timber</a></div>
+  </div>
+
+  <section class="topic" id="s1"><span class="num">8.1</span>
+    <h2>Wood light framing vs. heavy timber</h2>
+    <div class="tscroll"><table class="t">
+      <tr><th></th><th>Wood light frame (WLF)</th><th>Heavy timber (HT)</th></tr>
+      <tr><td class="k">System</td><td><b>Repetitive</b>: dimension lumber at close spacing (<b>12, 16 or 24" o.c.</b>); bearing walls carry loads to foundation</td><td><b>Skeletal</b>: widely spaced timber <b>posts &amp; beams</b> (like a steel frame)</td></tr>
+      <tr><td class="k">Connections</td><td>Nails, small fasteners</td><td>Large bolts &amp; steel plates, or traditional joinery</td></tr>
+      <tr><td class="k">Look</td><td>Usually covered up</td><td>Left exposed — part of the charm</td></tr>
+      <tr><td class="k">Sheathing</td><td>Plywood or OSB sheathing &amp; subfloor</td><td>Tongue-and-groove decking; SIP or stud infill walls</td></tr>
+      <tr><td class="k">Code type</td><td><b>Type V</b> (most combustible)</td><td><b>Type IV</b></td></tr>
+      <tr><td class="k">Cost / labor</td><td>Cheaper, more carpenters know it</td><td>More expensive, specialized</td></tr>
+    </table></div>
+  </section>
+
+  <section class="topic" id="s2"><span class="num">8.2</span>
+    <h2>Platform frame (vs. old balloon frame)</h2>
+    <div class="stack">
+      <figure class="dia">
+        <svg viewBox="0 0 720 360" role="img" aria-label="Platform frame vs balloon frame">
+          <text x="200" y="22" class="lbl-b" text-anchor="middle">PLATFORM (Western) FRAME ✔</text>
+          <rect x="60" y="320" width="300" height="24" fill="url(#p-conc)" class="o"/>
+          <g id="plat"></g>
+          <line x1="380" y1="20" x2="380" y2="350" stroke="#d9d0bd" stroke-dasharray="4 4"/>
+          <text x="560" y="22" class="lbl-b" text-anchor="middle">BALLOON FRAME (no longer used)</text>
+          <rect x="420" y="320" width="280" height="24" fill="url(#p-conc)" class="o"/>
+          <g id="ball"></g>
+        </svg>
+      </figure>
+      <div>
+        <p>The <b>platform frame</b> is built <b>one floor at a time</b>: floor platform → one-story walls → next platform → next walls.</p>
+        <ul class="tight">
+          <li><b>Each stud runs one story</b> → short, easy-to-handle studs</li>
+          <li>Each platform is a <b>work surface</b> for the next floor → safer</li>
+          <li><b>Firestops are automatic</b> — the platform blocks the wall cavity at each floor</li>
+          <li>Building height isn't limited by available stud length</li>
+        </ul>
+        <div class="callout exam"><b>On the exam</b><p>In platform framing, wall studs are typically <b>one story</b> tall. (Two stories / foundation-to-roof = balloon framing.)</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="topic" id="s3"><span class="num">8.3</span>
+    <h2>Floor framing: which way does everything run?</h2>
+    <div class="grid-dia">
+      <figure class="dia">
+        <div class="dia-controls" data-chips="floorSet"><button class="chip" data-v="joists">Joists</button><button class="chip" data-v="sheath">Sheathing</button><button class="chip on" data-v="both">Both</button></div>
+        <div id="floorBox"></div>
+        <figcaption>Joists span the SHORT way. Panels' long side (strength axis) runs ACROSS (perpendicular to) the joists, end joints staggered.</figcaption>
+      </figure>
+      <div>
+        <ul class="tight">
+          <li>Parallel, closely spaced joists with a <b>rim joist</b> around the edge</li>
+          <li>Joists: <b>2×8, 2×10, 2×12</b>, I-joists, or trusses at <b>12, 16, or 24" o.c.</b></li>
+          <li>Joists <b>span the shortest dimension</b> between supports (shorter span = smaller joists)</li>
+          <li>Supported by foundation walls, load-bearing stud walls, or carrying beams</li>
+          <li>Framing is strengthened at openings and overhangs</li>
+        </ul>
+        <div class="callout exam"><b>On the exam (Q21)</b><p><b>Joists run across the shorter span</b>, and the <b>sheathing strength axis runs perpendicular</b> to them.</p></div>
+        <div class="callout hook"><b>Hook</b><p>"<b>Short span, cross the plank.</b>" Joists go the short way; plywood/OSB goes across the joists like a bridge deck across beams.</p></div>
+        <p style="font-size:.93rem"><b>Floor sheathing install:</b> plywood or OSB, long dimension perpendicular to joists, nailed or screwed, <b>glued to stop squeaks</b>, <b>end joints staggered</b>.</p>
+      </div>
+    </div>
+    <div class="grid2">
+      <figure class="dia">
+        <svg viewBox="0 0 460 190" role="img" aria-label="Bridging, blocking and joist hanger">
+          <text x="110" y="20" class="lbl-m" text-anchor="middle">BRIDGING / BLOCKING</text>
+          <g fill="url(#p-woodsec)" class="o"><rect x="20" y="40" width="16" height="100"/><rect x="100" y="40" width="16" height="100"/><rect x="180" y="40" width="16" height="100"/></g>
+          <path d="M36 44 L100 136 M36 136 L100 44" stroke="#41657f" stroke-width="3"/>
+          <rect x="116" y="44" width="64" height="92" fill="url(#p-grain)" class="o"/>
+          <text x="68" y="160" class="lbl-s" text-anchor="middle">X-bridging</text><text x="148" y="160" class="lbl-s" text-anchor="middle">solid blocking</text>
+          <text x="340" y="20" class="lbl-m" text-anchor="middle">JOIST HANGER</text>
+          <rect x="250" y="30" width="40" height="130" fill="url(#p-woodsec)" class="o"/>
+          <rect x="290" y="60" width="150" height="70" fill="url(#p-grain)" class="o"/>
+          <path d="M290 54 h22 v82 h-22 M312 136 h-14" fill="none" stroke="#41657f" stroke-width="5"/>
+          <text x="370" y="160" class="lbl-s" text-anchor="middle">metal, sized to the joist</text>
+        </svg>
+      </figure>
+      <div>
+        <p><b>Bridging &amp; blocking</b> (wood or metal) give <b>lateral restraint</b>: improve rigidity, hold joists straight, and distribute loads. (Lecture: code requires it for joists deeper than 2×12.)</p>
+        <p><b>Joist hangers</b> provide anchorage and support where a joist frames into a beam or header.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="topic" id="s4"><span class="num">8.4</span>
+    <h2>Common roof profiles</h2>
+    <div class="grid3" style="grid-template-columns:repeat(4,1fr)">
+      <figure class="dia" style="margin:0"><div data-dia="roof" data-args='["flat"]'></div><figcaption><b>Flat</b> (slight slope to drain)</figcaption></figure>
+      <figure class="dia" style="margin:0"><div data-dia="roof" data-args='["shed"]'></div><figcaption><b>Shed / single pitch</b></figcaption></figure>
+      <figure class="dia" style="margin:0;border-color:var(--brick)"><div data-dia="roof" data-args='["gable"]'></div><figcaption><b>Gable ★</b> — 2 slopes meet at a ridge; <b>triangular end walls</b></figcaption></figure>
+      <figure class="dia" style="margin:0"><div data-dia="roof" data-args='["hip"]'></div><figcaption><b>Hip</b> — slopes on all 4 sides, meeting at hips &amp; a ridge</figcaption></figure>
+    </div>
+    <div class="callout exam" style="margin-top:16px"><b>On the exam</b><p>A <b>gable roof</b> has two sloping planes that meet at a <b>ridge</b>, forming <b>triangular end walls (gables)</b>. Four slopes meeting at hips = a hip roof (wrong answer).</p></div>
+  </section>
+
+  <section class="topic" id="s5"><span class="num">8.5</span>
+    <h2>Three ways to frame a roof</h2>
+    <div class="stack">
+      <figure class="dia">
+        <div class="dia-controls" data-chips="roofSet"><button class="chip on" data-v="board">Rafters + ridge BOARD + ceiling joists</button><button class="chip" data-v="beam">Rafters + ridge BEAM</button><button class="chip" data-v="truss">Trusses</button></div>
+        <div id="roofBox"></div>
+        <p id="roofTxt" style="margin:8px 4px 0;font-weight:600"></p>
+      </figure>
+      <div>
+        <h3>Rafter &amp; ridge board assembly</h3>
+        <ul class="tight">
+          <li>Rafters rest on the exterior walls and meet the opposite rafter at the ridge</li>
+          <li>Rafters: <b>2×6, 2×8, or 2×10</b> at <b>12, 16, or 24" o.c.</b></li>
+          <li><b>Ceiling joists</b> connect the rafters at the walls → they <b>tie the walls together</b> against the rafters' outward thrust (tension)</li>
+          <li><b>Collar ties</b> between rafters <b>counter uplift</b>; ridge straps also help</li>
+        </ul>
+        <h3>Rafter &amp; ridge beam</h3>
+        <ul class="tight">
+          <li>Rafters rest on walls at the bottom and <b>on a structural beam at the ridge</b></li>
+          <li>The <b>ridge beam supports the upper ends of the rafters</b> and carries their load down to <b>posts</b> or other supports</li>
+          <li><b>No ceiling joists needed</b> → used for <b>vaulted / cathedral ceilings</b></li>
+        </ul>
+        <div class="callout exam"><b>On the exam (Q22)</b><p>Gable roof with a structural ridge beam: <b>two slopes meet at the ridge, and the beam supports the upper ends of the rafters.</b></p></div>
+        <div class="callout trap"><b>Ridge BOARD vs ridge BEAM</b><p>A ridge <b>board</b> is just a nailing surface where rafters lean on each other — the ceiling joists do the work. A ridge <b>beam</b> is structural and holds the rafters up.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="topic" id="s6"><span class="num">8.6</span>
+    <h2>The bird's-mouth cut</h2>
+    <div class="grid-dia">
+      <figure class="dia">
+        <svg viewBox="0 -70 520 370" role="img" aria-label="Birds mouth cut on top plate">
+          <rect x="200" y="170" width="40" height="120" fill="url(#p-grainv)" class="o"/>
+          <rect x="196" y="158" width="48" height="12" fill="url(#p-grain)" class="o"/><rect x="196" y="146" width="48" height="12" fill="url(#p-grain)" class="o"/>
+          <polygon points="60,250 196,172 196,146 241,146 500,-3 500,-49 60,204" fill="url(#p-grain)" class="o2"/>
+          <path d="M196 172 V146 H241" stroke="#b3261e" stroke-width="4.5" fill="none" stroke-linejoin="round"/>
+          <path d="M212 146 L330 214" class="lead"/><text x="336" y="214" class="lbl">SEAT CUT</text><text x="336" y="230" class="lbl-s">sits flat on the top plate</text>
+          <path d="M194 156 L120 128" class="lead"/><text x="18" y="112" class="lbl">PLUMB cut</text><text x="18" y="128" class="lbl-s">vertical face against</text><text x="18" y="142" class="lbl-s">the outside of the wall</text>
+          <path d="M240 162 L330 262" class="lead"/><text x="336" y="264" class="lbl">TOP PLATE of the wall</text><text x="336" y="280" class="lbl-s">(double 2× plate)</text>
+          <text x="40" y="270" class="lbl-s">← rafter tail / overhang (outside)</text>
+          <text x="380" y="40" class="lbl-m">RAFTER → toward ridge</text>
+          <path d="M230 -20 Q206 30 214 120" fill="none" stroke="#6a4c93" stroke-width="1.5" stroke-dasharray="4 3"/><text x="160" y="-28" class="lbl" fill="#6a4c93">notch = the "bird's mouth"</text>
+        </svg>
+      </figure>
+      <div>
+        <p>A <b>bird's mouth</b> is a <b>notch cut in the underside of a rafter</b> where it <b>bears on the exterior wall's top plate</b>. It looks like an open bird's beak biting the plate.</p>
+        <p>It has a horizontal <b>seat cut</b> (rests flat on the plate) and a vertical <b>plumb cut</b>. A <b>hurricane clip</b> (metal tie) then fastens the rafter/truss to the plate against uplift.</p>
+        <div class="callout exam"><b>On the exam (Q23)</b><p>The bird's-mouth cut in a common rafter bears on <b>the wall's top plate</b> — not the ridge, not the sheathing, not the fascia.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="topic" id="s7"><span class="num">8.7</span>
+    <h2>Sheathing → felt → shingles (and house wrap)</h2>
+    <div class="grid-dia">
+      <figure class="dia">
+        <svg viewBox="0 0 545 300" role="img" aria-label="Roof layer sequence, exploded">
+          <text x="20" y="22" class="lbl-m">EXPLODED — installed bottom → top</text>
+          <!-- 4 shingles -->
+          <g id="shingles"></g>
+          <!-- 3 felt -->
+          <polygon points="60,150 360,150 400,124 100,124" fill="#3f3f45" class="o"/>
+          <!-- 2 sheathing -->
+          <polygon points="60,200 360,200 400,174 100,174" fill="url(#p-osb)" class="o"/><polygon points="60,200 360,200 360,212 60,212" fill="#b98a4a" class="o"/>
+          <!-- 1 rafters -->
+          <g id="rafters"></g>
+          <g>
+            <circle cx="430" cy="264" r="12" fill="#41657f"/><text x="430" y="269" class="lbl-w" text-anchor="middle">1</text><text x="448" y="262" class="lbl">rafters /</text><text x="448" y="278" class="lbl">trusses</text>
+            <circle cx="430" cy="196" r="12" fill="#41657f"/><text x="430" y="201" class="lbl-w" text-anchor="middle">2</text><text x="448" y="194" class="lbl">sheathing</text><text x="448" y="210" class="lbl-s">OSB / plywood</text>
+            <circle cx="430" cy="140" r="12" fill="#41657f"/><text x="430" y="145" class="lbl-w" text-anchor="middle">3</text><text x="448" y="138" class="lbl">felt</text><text x="448" y="154" class="lbl-s">underlayment</text>
+            <circle cx="430" cy="78" r="12" fill="#41657f"/><text x="430" y="83" class="lbl-w" text-anchor="middle">4</text><text x="448" y="76" class="lbl">shingles</text><text x="448" y="92" class="lbl-s">roof covering</text>
+          </g>
+          <path d="M30 270 V60" stroke="#1d2433" stroke-width="2" marker-end="url(#m-arrow-ink)"/><text x="22" y="170" class="lbl-s" text-anchor="middle" transform="rotate(-90 22 170)">order of installation</text>
+        </svg>
+      </figure>
+      <div>
+        <div class="callout exam"><b>On the exam (Q24)</b><p><b>Roof sheathing goes on BEFORE the roof covering.</b> The sheathing forms the <b>continuous deck</b> that supports the underlayment and the roof covering — shingles need something solid to nail into.</p></div>
+        <p><b>Sheathing (OSB or plywood)</b>: joins &amp; stabilizes the structure, <b>resists uplift</b>, <b>resists racking</b> from lateral forces, and provides a surface for finish materials. Metal <b>edge clips (H-clips)</b> support roof panel edges between rafters. Note the OSB strand orientation.</p>
+        <p><b>Roofing felt</b>: recycled paper &amp; sawdust impregnated with <b>asphalt</b>; underlayment for the finished roofing; rolls <b>30" wide × 50 or 100 ft</b>; now sold as <b>#15 or #30</b> (formerly "15 lb/30 lb"). Not truly "tar paper" (that's virgin pulp + tar).</p>
+        <p><b>House wrap</b> (walls): a water barrier that keeps liquid water out but <b>lets water vapor pass</b>, resists air infiltration; made of tiny polyethylene fibers. Then <b>siding</b>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="topic" id="s8"><span class="num">8.8</span>
+    <h2>Sequence of a house under construction</h2>
+    <figure class="dia"><svg viewBox="0 0 940 170" role="img" aria-label="House construction sequence"><g id="seq"></g></svg></figure>
+  </section>
+
+  <section class="topic" id="s9"><span class="num">8.9</span>
+    <h2>Heavy timber construction</h2>
+    <div class="stack">
+      <figure class="dia">
+        <svg viewBox="0 0 720 340" role="img" aria-label="Heavy timber frame with bents, purlins and decking">
+          <rect x="20" y="300" width="680" height="20" fill="url(#p-conc)" class="o"/>
+          <g id="ht"></g>
+        </svg>
+      </figure>
+      <div>
+        <ul class="tight">
+          <li><b>Skeletal</b> — resembles structural steel: widely spaced timber <b>posts (columns) and beams</b>; posts carry loads to the foundation</li>
+          <li>Roof on timber rafters or trusses; <b>purlins</b> span across them to shorten the span for decking or sandwich panels</li>
+          <li><b>Tongue &amp; groove decking</b> carries floor and roof loads to the frame</li>
+          <li>Walls are filled in with conventional stud walls or <b>SIPs</b> (fastened with special screws)</li>
+          <li>During construction, <b>bents</b> (a post-and-beam cross frame) are assembled on the ground, stacked, then <b>hoisted by crane</b></li>
+          <li><b>Knee braces</b> (short diagonals at post-beam corners) help resist <b>lateral loads</b></li>
+          <li>Connections = <b>joinery</b>: traditional mortise-and-tenon / dovetail, or modern steel plates &amp; bolts</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="done-row"><a class="btn ghost" href="engineered-wood.html">← Engineered Wood</a><button class="btn" data-done>Mark this lesson done</button><a class="btn ghost" href="huntington.html">Next: 525 Huntington →</a></div>
+</main>
+<script>
+function floorSet(v){ document.getElementById('floorBox').innerHTML=DIA.floorPlan(v); }
+const ROOFTXT={board:'Ridge BOARD: rafters lean on each other; CEILING JOISTS tie the wall tops together (tension) so walls don\'t spread. Collar ties resist uplift.',
+  beam:'Ridge BEAM: a structural beam holds up the UPPER ENDS of the rafters; posts carry it down. No ceiling joists → open cathedral/vaulted ceiling.',
+  truss:'Trusses: factory-built triangles span wall to wall, usually 24" o.c. Top chords = rafters, bottom chord = ceiling joist.'};
+function roofSet(v){
+  const W=720,H=330; let b='';
+  const L=90,R=630, top=210, peak=70, mid=360;
+  b+=`<rect x="${L-10}" y="${top}" width="20" height="110" fill="url(#p-grainv)" class="o"/><rect x="${R-10}" y="${top}" width="20" height="110" fill="url(#p-grainv)" class="o"/>`;
+  b+=`<rect x="${L-14}" y="${top-8}" width="28" height="8" fill="url(#p-grain)" class="o"/><rect x="${R-14}" y="${top-8}" width="28" height="8" fill="url(#p-grain)" class="o"/>`;
+  const rafter=(x1,y1,x2,y2,w=12)=>`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#9b6527" stroke-width="${w}" stroke-linecap="round"/>`;
+  b+=rafter(L-40,top+12,mid,peak)+rafter(R+40,top+12,mid,peak);
+  if(v==='board'){
+    b+=`<rect x="${mid-5}" y="${peak-14}" width="10" height="34" fill="#c99556" class="o"/>`;
+    b+=`<line x1="${L}" y1="${top-4}" x2="${R}" y2="${top-4}" stroke="#c08a4b" stroke-width="9"/>`;
+    b+=`<line x1="${mid-90}" y1="${peak+65}" x2="${mid+90}" y2="${peak+65}" stroke="#c08a4b" stroke-width="7"/>`;
+    b+=`<path d="M${L-20} ${top-30} h-40" stroke="#b3261e" stroke-width="3" marker-end="url(#m-arrow-red)"/><path d="M${R+20} ${top-30} h40" stroke="#b3261e" stroke-width="3" marker-end="url(#m-arrow-red)"/>`;
+    b+=`<text x="${L-64}" y="${top-40}" class="lbl" fill="#b3261e">thrust</text><text x="${R+24}" y="${top-40}" class="lbl" fill="#b3261e">thrust</text>`;
+    b+=`<text x="${mid}" y="${top+22}" class="lbl" text-anchor="middle">CEILING JOIST (ties walls — in tension)</text>`;
+    b+=`<path d="M${L+30} ${top+28} H${L+90}" stroke="#2e7d4f" stroke-width="2.5" marker-end="url(#m-arrow-green)"/><path d="M${R-30} ${top+28} H${R-90}" stroke="#2e7d4f" stroke-width="2.5" marker-end="url(#m-arrow-green)"/><text x="${L+60}" y="${top+46}" class="lbl-s" text-anchor="middle" fill="#2e7d4f">pulls walls in</text><text x="${R-60}" y="${top+46}" class="lbl-s" text-anchor="middle" fill="#2e7d4f">pulls walls in</text>`;
+    b+=`<text x="${mid+100}" y="${peak+70}" class="lbl">collar tie</text><text x="${mid+16}" y="${peak-18}" class="lbl">ridge board</text>`;
+  }
+  if(v==='beam'){
+    b+=`<rect x="${mid-16}" y="${peak-10}" width="32" height="40" fill="url(#p-woodsec)" class="o2"/>`;
+    b+=`<rect x="${mid-9}" y="${peak+30}" width="18" height="${320-peak-30}" fill="url(#p-grainv)" class="o"/>`;
+    b+=`<path d="M${mid-60} ${peak+120} L${mid-60} ${peak+120}"/>`;
+    b+=`<path d="M${L+20} ${top} L${mid-16} ${peak+30} L${mid+16} ${peak+30} L${R-20} ${top}" fill="#fff6d8" opacity=".6"/>`;
+    b+=`<text x="${mid}" y="${top-10}" class="lbl-s" text-anchor="middle">open vaulted / cathedral ceiling</text>`;
+    b+=`<path d="M${mid} ${peak-40} v26" stroke="#b3261e" stroke-width="3" marker-end="url(#m-arrow-red)"/><path d="M${mid} ${peak+60} v${200}" stroke="#b3261e" stroke-width="3" stroke-dasharray="6 4" marker-end="url(#m-arrow-red)"/>`;
+    b+=`<text x="${mid+24}" y="${peak+4}" class="lbl">RIDGE BEAM (structural)</text><text x="${mid+24}" y="${peak+20}" class="lbl-s">supports upper ends of rafters</text>`;
+    b+=`<text x="${mid+18}" y="${top+60}" class="lbl">post → foundation</text>`;
+  }
+  if(v==='truss'){
+    b=b.replace(/<line x1="[^"]*" y1="[^"]*" x2="[^"]*" y2="[^"]*" stroke="#9b6527" stroke-width="12" stroke-linecap="round"\/>/g,'');
+    b+=rafter(L-40,top+12,mid,peak,9)+rafter(R+40,top+12,mid,peak,9)+`<line x1="${L-10}" y1="${top-2}" x2="${R+10}" y2="${top-2}" stroke="#9b6527" stroke-width="9"/>`;
+    [[L+90,top,L+150,top-60],[L+150,top-60,mid,top],[mid,top,R-150,top-60],[R-150,top-60,R-90,top],[mid,top,mid,peak]].forEach(a=>b+=`<line x1="${a[0]}" y1="${a[1]}" x2="${a[2]}" y2="${a[3]}" stroke="#c08a4b" stroke-width="6"/>`);
+    b+=`<text x="${mid}" y="${top+24}" class="lbl" text-anchor="middle">bottom chord acts as ceiling joist</text>`;
+  }
+  b+=`<text x="${L-30}" y="${top+80}" class="lbl-s">wall</text><text x="${R+14}" y="${top+80}" class="lbl-s">wall</text><text x="${L+30}" y="${peak+70}" class="lbl">rafter</text>`;
+  document.getElementById('roofBox').innerHTML=DIA.svg(W,H,b,'aria-label="roof framing"');
+  document.getElementById('roofTxt').textContent=ROOFTXT[v];
+}
+(function(){
+  // platform frame
+  let p=''; const fl=(y)=>`<rect x="60" y="${y}" width="300" height="22" fill="url(#p-woodsec)" class="o"/><rect x="60" y="${y-6}" width="300" height="6" fill="url(#p-osb)" class="o"/>`;
+  p+=fl(298); for(let x=66;x<360;x+=36) p+=`<rect x="${x}" y="170" width="8" height="122" fill="url(#p-grainv)" class="o"/>`;
+  p+=`<rect x="60" y="162" width="300" height="8" fill="url(#p-grain)" class="o"/>`;
+  p+=fl(140-0).replace(/y="140"/,'y="140"'); p=p.replace('y="140" width="300" height="22"','y="140" width="300" height="22"');
+  for(let x=66;x<360;x+=36) p+=`<rect x="${x}" y="40" width="8" height="94" fill="url(#p-grainv)" class="o"/>`;
+  p+=`<rect x="60" y="32" width="300" height="8" fill="url(#p-grain)" class="o"/>`;
+  p+=`<text x="210" y="290" class="lbl-s" text-anchor="middle" font-weight="700">1st floor platform</text><text x="210" y="157" class="lbl-s" text-anchor="middle" font-weight="700">2nd floor platform</text>`;
+  p+=`<path d="M40 170 V292" class="dim" marker-start="url(#m-arrow)" marker-end="url(#m-arrow)"/><text x="34" y="236" class="lbl-s" text-anchor="middle" transform="rotate(-90 34 236)">1 story</text>`;
+  p+=`<path d="M40 40 V134" class="dim" marker-start="url(#m-arrow)" marker-end="url(#m-arrow)"/><text x="34" y="90" class="lbl-s" text-anchor="middle" transform="rotate(-90 34 90)">1 story</text>`;
+  document.getElementById('plat').innerHTML=p;
+  let b=''; for(let x=426;x<700;x+=34) b+=`<rect x="${x}" y="36" width="8" height="284" fill="url(#p-grainv)" class="o"/>`;
+  b+=`<rect x="420" y="160" width="280" height="8" fill="#c99556" class="o"/><rect x="420" y="168" width="280" height="20" fill="url(#p-woodsec)" class="o" opacity=".8"/>`;
+  b+=`<rect x="420" y="28" width="280" height="8" fill="url(#p-grain)" class="o"/>`;
+  b+=`<text x="560" y="206" class="lbl-s" text-anchor="middle" font-weight="700">2nd floor joists hang on a ribbon</text>`;
+  b+=`<path d="M712 320 V36" class="dim" marker-start="url(#m-arrow)" marker-end="url(#m-arrow)"/><text x="706" y="250" class="lbl-s" text-anchor="end">studs run 2 stories</text>`;
+  b+=`<path d="M444 300 C 444 250, 444 120, 444 60" stroke="#e0612b" stroke-width="3" fill="none" marker-end="url(#m-arrow-red)"/><text x="452" y="110" class="lbl-s" fill="#b3261e">fire can race up</text><text x="452" y="124" class="lbl-s" fill="#b3261e">the open cavity</text>`;
+  document.getElementById('ball').innerHTML=b;
+  // roof layer stack
+  let r=''; for(let x=70;x<=370;x+=50) r+=`<polygon points="${x},280 ${x+10},280 ${x+40},236 ${x+30},236" fill="url(#p-woodsec)" class="o"/>`; document.getElementById('rafters').innerHTML=r;
+  let sh=''; for(let row=0;row<3;row++){ const y=96-row*12, dx=row*18; for(let x=60+dx+(row%2)*15;x<360+dx;x+=30) sh+=`<polygon points="${x},${y} ${x+28},${y} ${x+40},${y-12} ${x+12},${y-12}" fill="${row%2?'#6b6b73':'#55555c'}" stroke="#2c2c30"/>`; } document.getElementById('shingles').innerHTML=sh;
+  // sequence
+  const S=['Foundation','Slab on grade','1st floor framing','Walls','2nd floor platform & walls','Exterior wall sheathing','Roof trusses','Roof sheathing','Roofing felt','Shingles','House wrap → siding'];
+  let q=''; S.forEach((t,i)=>{ const x=6+i*84; q+=`<rect x="${x}" y="40" width="76" height="76" rx="10" fill="${[7,8,9].includes(i)?'#e7f0f6':'#efe6d4'}" class="o"/><text x="${x+38}" y="30" class="lbl-m" text-anchor="middle">${i+1}</text>`;
+    const words=t.split(' '); let line='',lines=[]; words.forEach(w=>{ if((line+' '+w).trim().length>10){lines.push(line.trim());line=w;} else line+=' '+w; }); lines.push(line.trim());
+    lines.forEach((l,k)=> q+=`<text x="${x+38}" y="${70+k*15-(lines.length-1)*7}" class="lbl-s" font-weight="600" text-anchor="middle">${l}</text>`); });
+  q+=`<text x="470" y="146" class="lbl" text-anchor="middle">Blue = the roof sequence on the exam: sheathing → felt underlayment → shingles</text>`;
+  document.getElementById('seq').innerHTML=q;
+  // heavy timber
+  let h=''; const posts=[80,280,480,640];
+  posts.forEach(x=>{ h+=`<rect x="${x-12}" y="120" width="24" height="180" fill="url(#p-grainv)" class="o"/>`; });
+  h+=`<rect x="56" y="104" width="608" height="20" fill="url(#p-grain)" class="o"/>`;
+  posts.forEach(x=>{ if(x>80) h+=`<line x1="${x-12}" y1="160" x2="${x-52}" y2="124" stroke="#9b6527" stroke-width="9"/>`; if(x<640) h+=`<line x1="${x+12}" y1="160" x2="${x+52}" y2="124" stroke="#9b6527" stroke-width="9"/>`; });
+  h+=`<path d="M56 104 L360 26 L664 104" fill="none" stroke="#9b6527" stroke-width="12"/>`;
+  for(let i=1;i<6;i++){ const t=i/6, xl=56+(360-56)*t, yl=104-(104-26)*t, xr=664-(664-360)*t; h+=`<rect x="${xl-8}" y="${yl-16}" width="16" height="14" fill="url(#p-woodsec)" class="o"/><rect x="${xr-8}" y="${yl-16}" width="16" height="14" fill="url(#p-woodsec)" class="o"/>`; }
+  h+=`<text x="148" y="70" class="lbl">purlins</text><path d="M196 66 L206 66" class="lead"/>`;
+  h+=`<text x="300" y="150" class="lbl">beam</text><text x="292" y="240" class="lbl">post</text>`;
+  h+=`<text x="410" y="176" class="lbl">knee brace</text><path d="M440 164 L446 146" class="lead"/>`;
+  h+=`<text x="520" y="60" class="lbl">T&amp;G decking / SIPs on top</text>`;
+  h+=`<text x="360" y="336" class="lbl-s" text-anchor="middle">Bents (post + beam cross-frames) are assembled on the ground, stacked, then hoisted by crane.</text>`;
+  document.getElementById('ht').innerHTML=h;
+  document.addEventListener('DOMContentLoaded',()=>{floorSet('both');roofSet('board');});
+})();
+</script>
+<script src="js/app.js"></script>
+</body></html>

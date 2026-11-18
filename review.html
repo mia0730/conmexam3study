@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Last-Minute Review Sheet — CONM 1200 Exam 3</title>
+<link rel="stylesheet" href="css/style.css"><script src="js/diagrams.js"></script>
+<style>
+  .sheet{max-width:1180px;margin:24px auto 30px;background:#fff;border:2px solid var(--ink);border-radius:14px;padding:16px 18px}
+  .sh-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--ink);padding-bottom:6px;margin-bottom:10px;gap:10px;flex-wrap:wrap}
+  .sh-head h1{font-size:1.55rem;margin:0}
+  .sh-head span{font-family:var(--mono);font-size:.75rem;color:var(--ink-2)}
+  .tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
+  .tile{border:1.5px solid var(--rule);border-radius:10px;padding:8px 10px;font-size:.8rem;line-height:1.38;border-top:5px solid var(--c,var(--brick));break-inside:avoid}
+  .tile h3{font-size:.86rem;margin:0 0 4px;display:flex;justify-content:space-between;gap:6px}
+  .tile h3 i{font-style:normal;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);font-weight:600}
+  .tile .m{height:64px;display:flex;align-items:center;justify-content:center;margin:2px 0 4px;background:var(--paper);border-radius:6px;overflow:hidden}
+  .tile .m svg{height:60px;width:auto;max-width:100%}
+  .tile ul{margin:0;padding-left:1.05em}.tile li{margin:1px 0}
+  .tile b{color:var(--ink)}
+  .k{background:linear-gradient(transparent 58%,#ffe27a 58%);font-weight:700}
+  .sh-foot{margin-top:9px;font-size:.78rem;display:flex;gap:16px;flex-wrap:wrap;border-top:1.5px dashed var(--rule);padding-top:7px}
+  .printbar{text-align:center;margin:20px 0 0}
+  @media (max-width:980px){.tiles{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:560px){.tiles{grid-template-columns:1fr}}
+  @media print{
+    @page{size:letter landscape;margin:.28in}
+    html,body{background:#fff!important;font-size:12px}
+    .topbar,.printbar,footer.foot{display:none!important}
+    .wrap{padding:0;max-width:none}
+    .sheet{margin:0;border:none;padding:0;max-width:none}
+    .tiles{grid-template-columns:repeat(4,1fr);gap:6px}
+    .tile{font-size:7.6pt;padding:5px 7px;line-height:1.3}
+    .tile h3{font-size:8.2pt}
+    .tile .m{height:60px}.tile .m svg{height:58px}
+    .sh-head h1{font-size:14pt}
+    .sh-foot{font-size:7.4pt}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+</style></head>
+<body>
+<main class="wrap">
+  <div class="printbar"><button class="btn" onclick="window.print()">🖨 Print this sheet (fits 1 landscape page)</button></div>
+  <div class="sheet">
+    <div class="sh-head"><h1>CONM 1200 · Exam 3 — One-Glance Review</h1><span>Masonry · Wall details · CMU lab · Wood · Framing · 525 Huntington</span></div>
+    <div class="tiles">
+      <div class="tile" style="--c:var(--brick)"><h3>Course · Wythe · Joints <i>L1</i></h3><div class="m" id="m1"></div>
+        <ul><li><span class="k">Course</span> = horizontal row</li><li><span class="k">Wythe</span> = vertical layer 1 unit thick</li><li>Bed joint = horizontal · Head joint = vertical</li></ul></div>
+      <div class="tile" style="--c:var(--brick)"><h3>Brick positions <i>L1</i></h3><div class="m" id="m2"></div>
+        <ul><li><b>Stretcher</b> flat, long face horizontal</li><li><b>Header</b> flat, short end out (ties wythes)</li><li><b>Soldier</b> upright on end, long narrow face</li><li>Rowlock · Sailor (upright broad) · Shiner</li></ul></div>
+      <div class="tile" style="--c:var(--brick)"><h3>Bonds <i>L1</i></h3><div class="m" id="m3"></div>
+        <ul><li><span class="k">Flemish</span> = H &amp; S alternate <u>within each course</u></li><li>English = whole courses alternate</li><li>Running · Common (header course ~every 6th) · Stack</li></ul></div>
+      <div class="tile" style="--c:var(--cmu-d)"><h3>CMU units &amp; walls <i>L2</i></h3><div class="m" id="m4"></div>
+        <ul><li><b>Corner</b> → wall ends / outside corners</li><li><b>Bullnose</b> → rounded corners</li><li><b>Bond beam</b> → horizontal rebar + grout</li><li><b>Partition</b>: divides space, own weight only · <b>Shear wall</b>: resists in-plane lateral (wind/quake)</li></ul></div>
+      <div class="tile" style="--c:#8a6500"><h3>Mortar <i>L3</i></h3>
+        <ul><li><span class="k">Sand = bulk</span> (limits shrinkage)</li><li><span class="k">Lime = workability</span> + water retention, bond</li><li>Cement = binder · water: as much as workable</li><li><span class="k">Tooling compacts</span> the joint → keeps water out</li><li>Types <b>M S N O</b> (MaSoN wOrK) strong→weak; use weakest that works</li><li>⅜" joints standard · retemper ≤90 min, toss at 2½ hr</li></ul></div>
+      <div class="tile" style="--c:var(--brick)"><h3>Brick making &amp; movement <i>L1·L4</i></h3>
+        <ul><li>Clay/shale → crush/screen → <b>pug mill</b> + water → mold → dry → <span class="k">fire in kiln</span></li><li>Kiln-dry brick <b>absorbs moisture → expands</b></li><li><b>Brick grows → EXPANSION joint</b> (compresses)</li><li><b>CMU shrinks → CONTROL joint</b></li><li>Joint = gap + backer rod + sealant</li></ul></div>
+      <div class="tile" style="--c:var(--wall)"><h3>Cavity wall <i>L4</i></h3><div class="m" id="m7"></div>
+        <ul><li>Out→in: <b>brick · cavity · rigid foam · CMU</b></li><li>Bears on <b>foundation ledge</b> (both wythes)</li><li><span class="k">Water: cavity → flashing above lintel → weeps</span></li><li>Weeps = open head joints, 16–24" apart</li></ul></div>
+      <div class="tile" style="--c:var(--wall)"><h3>Ties · shelf angles · panels <i>L4</i></h3>
+        <ul><li><b>Adjustable tie</b>: lateral support + aligns w/ veneer joint (not weight!)</li><li>Other backup: <b>sheathed wood studs</b> (or metal studs)</li><li>Shelf angle every 1–2 stories; gap below = horiz. joint</li><li><span class="k">Sandwich panel: masonry · insulation · masonry</span> (concrete · foam · concrete)</li></ul></div>
+      <div class="tile" style="--c:var(--lab)"><h3>CMU lab <i>L5</i></h3><div class="m" id="m9"></div>
+        <ul><li><span class="k">6" nominal · ⅜" joints · concave</span></li><li>Ladder/truss reinf. in <b>horizontal bed joints</b></li><li><b>16" o.c. = every 2nd course</b> (8" courses)</li><li><span class="k">3 modular brick courses = 1 CMU</span> (8")</li></ul></div>
+      <div class="tile" style="--c:var(--woodc)"><h3>Wood &amp; lumber <i>L6</i></h3>
+        <ul><li>Soft/hard = <b>tree groups</b> (conifer vs broadleaf), not hardness</li><li><b>Cedar heartwood resists decay</b> → outdoors</li><li><b>Plain sawn</b>: parallel cuts, tangent to rings (framing)</li><li><b>Kiln</b>: controlled heat, humidity, airflow (days) · <b>Air</b>: ambient, slower</li><li>Green = MC &gt; 19% · S4S after drying</li></ul></div>
+      <div class="tile" style="--c:var(--woodc)"><h3>Sizes &amp; products <i>L6·L7</i></h3>
+        <ul><li><span class="k">1×6 = ¾×5½ · 2×8 = 1½×7¼ · 8×8 = 7½×7½</span></li><li>Rule: 1→¼ less · 2–6→½ less · &gt;6→¾ less</li><li>Veneer grade = <b>size &amp; number of defects</b></li><li>Sheathing: <b>plywood &amp; OSB</b></li><li>I-joist web <b>OSB</b> → <b>manufacturer's span tables</b></li><li>SIP = OSB + <b>foam core</b> · Dovetail = <b>tapered interlock</b></li></ul></div>
+      <div class="tile" style="--c:var(--frame)"><h3>Framing &amp; roofs <i>L8·L9</i></h3><div class="m" id="m12"></div>
+        <ul><li>Platform studs = <b>1 story</b></li><li>Joists span <b>short</b> way · sheathing <b>perpendicular to joists</b></li><li><b>Gable</b>: 2 slopes at a ridge · <b>ridge beam</b> holds upper rafter ends</li><li><b>Bird's mouth</b> sits on <b>top plate</b> · <span class="k">sheathing before covering</span></li><li><b>525 Huntington</b>: braced excavation → steel → deck. Bracing held excavation walls; steel beams held deck.</li></ul></div>
+    </div>
+    <div class="sh-foot"><span><b>Hooks:</b> Course = Cross · Wythe = how many Walls thick</span><span>Catch it, Carry it, Kick it out (cavity, flashing, weeps)</span><span>Brick Bigger → Expansion · CMU Contracts → Control</span><span>"6 · ⅜ · cave it in"</span><span>Hole → Skeleton → Floor</span></div>
+  </div>
+  <div class="printbar" style="margin-bottom:30px"><a class="btn ghost" href="practice.html">← Practice</a> <a class="btn ghost" href="index.html">Home</a></div>
+</main>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const S=(id,html)=>document.getElementById(id).innerHTML=html;
+  S('m1', DIA.courseWythe('course'));
+  S('m2', ['stretcher','header','soldier'].map(p=>DIA.brickPos(p)).join(''));
+  S('m3', DIA.bond('flemish',{w:260,rows:4}));
+  S('m4', DIA.cmuUnit('corner')+DIA.cmuUnit('bullnose')+DIA.cmuUnit('bondbeam'));
+  S('m7', `<svg viewBox="0 0 220 120"><rect x="20" y="4" width="34" height="100" fill="url(#p-brick)" stroke="#1d2433"/><rect x="54" y="4" width="16" height="100" fill="#fff"/><rect x="70" y="4" width="18" height="80" fill="url(#p-insul)" stroke="#1d2433"/><rect x="88" y="4" width="50" height="100" fill="url(#p-cmu)" stroke="#1d2433"/><path d="M14 104 H62 Q70 104 70 96 V84 H110" stroke="#16324b" stroke-width="4" fill="none"/><rect x="30" y="90" width="5" height="13" fill="#fff" stroke="#16324b"/><path d="M0 30 H60 V100 L36 102 L4 110" stroke="#2a8bd6" stroke-width="2.5" fill="none" stroke-dasharray="5 4"/><text x="146" y="40" font-size="12" font-weight="700" fill="#1d2433">cavity</text><text x="146" y="58" font-size="12" font-weight="700" fill="#16324b">flashing</text><text x="146" y="76" font-size="12" font-weight="700" fill="#2a8bd6">weeps</text></svg>`);
+  S('m9', DIA.cmuBrick());
+  S('m12', DIA.roof('gable',true)+DIA.floorPlan('both'));
+});
+</script>
+<script src="js/app.js"></script>
+</body></html>

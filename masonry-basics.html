@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>1 · Brick & Bonds — CONM 1200 Exam 3</title>
+<link rel="stylesheet" href="css/style.css"><script src="js/diagrams.js"></script></head>
+<body style="--accent:var(--masonry)">
+<main class="wrap">
+  <div class="lesson-hero">
+    <div class="kicker">Lesson 1 · Masonry vocabulary</div>
+    <h1>Brick, Courses, Wythes &amp; Bonds</h1>
+    <p class="lede">This is the language of masonry. If you can picture a wall and point to a course, a wythe, a soldier and a Flemish bond, you've already got several exam questions locked in.</p>
+    <div class="toc"><a href="#s1">Masonry 101</a><a href="#s2">Course vs wythe</a><a href="#s3">6 brick positions</a><a href="#s4">Bond patterns</a><a href="#s5">How brick is made</a><a href="#s6">Why brick grows</a></div>
+  </div>
+
+  <section class="topic" id="s1"><span class="num">1.1</span>
+    <h2>Masonry 101 — what we're building with</h2>
+    <div class="grid-dia">
+      <figure class="dia">
+        <svg viewBox="0 0 540 270" role="img" aria-label="Solid brick wall vs brick veneer walls">
+          <!-- solid -->
+          <text x="80" y="20" class="lbl-b" text-anchor="middle">Solid brick</text>
+          <g>
+            <rect x="40" y="36" width="36" height="200" fill="url(#p-brick)" class="o"/>
+            <rect x="84" y="36" width="36" height="200" fill="url(#p-brick)" class="o"/>
+            <rect x="76" y="36" width="8" height="200" class="f-mortar o"/>
+            <rect x="40" y="118" width="80" height="22" fill="#7e2c1b" class="o"/>
+            <text x="80" y="133" class="lbl-w" text-anchor="middle" font-size="10">header</text>
+          </g>
+          <text x="80" y="256" class="lbl-s" text-anchor="middle">2 wythes, headers tie them</text>
+          <!-- veneer wood -->
+          <text x="265" y="20" class="lbl-b" text-anchor="middle">Veneer + wood studs</text>
+          <rect x="205" y="36" width="36" height="200" fill="url(#p-brick)" class="o"/>
+          <rect x="262" y="36" width="5" height="200" class="f-wood-d o"/>
+          <rect x="267" y="36" width="44" height="200" fill="url(#p-woodsec)" class="o"/>
+          <rect x="311" y="36" width="6" height="200" fill="#eee" class="o"/>
+          <path d="M236 110 h14 l3 -4 l3 8 l3 -8 l3 4 h6" stroke="#41657f" stroke-width="2.5" fill="none"/>
+          <path d="M236 180 h14 l3 -4 l3 8 l3 -8 l3 4 h6" stroke="#41657f" stroke-width="2.5" fill="none"/>
+          <text x="252" y="256" class="lbl-s" text-anchor="middle">brick · air space · sheathing · stud</text>
+          <!-- veneer CMU -->
+          <text x="450" y="20" class="lbl-b" text-anchor="middle">Veneer + CMU</text>
+          <rect x="385" y="36" width="36" height="200" fill="url(#p-brick)" class="o"/>
+          <rect x="433" y="36" width="20" height="200" fill="url(#p-insul)" class="o"/>
+          <rect x="455" y="36" width="56" height="200" fill="url(#p-cmu)" class="o"/>
+          <line x1="421" y1="100" x2="480" y2="100" stroke="#41657f" stroke-width="2.5"/>
+          <line x1="421" y1="166" x2="480" y2="166" stroke="#41657f" stroke-width="2.5"/>
+          <text x="450" y="256" class="lbl-s" text-anchor="middle">brick · cavity · insulation · CMU</text>
+        </svg>
+        <figcaption>Today most brick is a thin <b>veneer</b> (one wythe) tied to a backup wall. Blue = metal ties.</figcaption>
+      </figure>
+      <div>
+        <p>Masonry = building with small units stacked in mortar. Materials include <b>concrete products</b> (concrete block = <b>CMU</b>, concrete brick, pavers), <b>clay products</b> (brick, quarry &amp; ceramic tile), and <b>stone &amp; glass</b> (stone veneer, glass block).</p>
+        <p>This unit focuses on two: <b>Concrete Masonry Units (CMUs)</b> and <b>clay brick</b>.</p>
+        <p><b>How brick is used today:</b></p>
+        <ul class="tight">
+          <li><b>Veneer (facing)</b> — a thin outer skin of brick with a <b>backup wall</b> behind it for support. Backup can be <b>wood studs, metal studs, or CMU</b>.</li>
+          <li><b>Solid brick walls</b> — often decorative now.</li>
+          <li><b>Flooring &amp; paving.</b></li>
+        </ul>
+        <div class="callout note"><b>Why people love brick</b><p>Small units → intricate patterns, arches, mosaics. Mortar joints can be colored to contrast or blend with the brick.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="topic" id="s2"><span class="num">1.2</span>
+    <h2>Course vs. wythe (and head vs. bed joints)</h2>
+    <div class="grid-dia">
+      <figure class="dia">
+        <div class="dia-controls" data-chips="cwSet">
+          <button class="chip on" data-v="course">Course</button><button class="chip" data-v="wythe">Wythe</button><button class="chip" data-v="bed">Bed joint</button><button class="chip" data-v="head">Head joint</button>
+        </div>
+        <div id="cwBox" data-dia="courseWythe" data-args='["course"]'></div>
+        <figcaption>Tap the buttons — the yellow outline shows what each word means.</figcaption>
+      </figure>
+      <div>
+        <dl class="defs">
+          <dt>Course</dt><dd>A <b>horizontal row</b> of masonry units.</dd>
+          <dt>Wythe</dt><dd>A continuous <b>vertical layer</b> of masonry <b>one unit thick</b>.</dd>
+          <dt>Bed joint</dt><dd>The <b>horizontal</b> mortar joint the unit sits ("lies in bed") on.</dd>
+          <dt>Head joint</dt><dd>The <b>vertical</b> mortar joint between the ends of units.</dd>
+        </dl>
+        <div class="callout hook"><b>Memory hook</b><p><b>C</b>ourse = <b>C</b>ross the wall (side to side). <b>W</b>ythe = how many <b>W</b>alls thick (front to back). A 2-wythe wall is two bricks thick.</p></div>
+        <div class="callout exam"><b>On the exam</b><p>"A course is a horizontal row of units, and a wythe is a continuous layer one unit thick." — that exact pairing is the right answer.</p></div>
+      </div>
+    </div>
+    <div class="qc" data-a="1"><div class="qh">Quick check</div><div class="qq">A wall is described as "two wythes." What does that tell you?</div>
+      <div class="opts"><button class="opt">It is two courses tall</button><button class="opt">It is two units thick, front to back</button><button class="opt">It has two head joints per brick</button></div>
+      <div class="why">Wythe = vertical layer one unit thick. Two wythes = two layers = two bricks thick.</div></div>
+  </section>
+
+  <section class="topic" id="s3"><span class="num">1.3</span>
+    <h2>The six brick positions</h2>
+    <p>Same brick, six ways to set it. What matters is <b>which face shows</b> on the wall and whether the brick is <b>lying flat, on edge, or standing up</b>. The bright red face is the one you see from outside.</p>
+    <figure class="dia"><div data-dia="brickPositions"></div></figure>
+    <div class="grid2">
+      <div class="callout exam"><b>Exam focus: stretcher · header · soldier</b>
+        <p><b>Stretcher</b> — lies flat, <b>long face</b> exposed horizontally. (The "normal" brick.)<br>
+        <b>Header</b> — lies flat, <b>short end</b> exposed. It reaches back into the wall, so headers can tie two wythes together.<br>
+        <b>Soldier</b> — <b>stands upright on end</b>, long narrow face exposed. Often a row over windows.</p></div>
+      <div class="callout hook"><b>Memory hooks</b>
+        <p>A <b>stretcher</b> stretches out lengthwise. A <b>header</b> shows you its <b>head</b> (the end). A <b>soldier</b> stands tall and skinny at attention. A <b>sailor</b> stands up but puffs out his broad chest. A <b>rowlock</b> is a header rolled onto its edge. A <b>shiner</b> shows off its big broad face, sideways.</p></div>
+    </div>
+    <div class="qc" data-a="2"><div class="qh">Quick check</div><div class="qq">Which brick orientation presents the long face of the brick horizontally?</div>
+      <div class="opts"><button class="opt">Header</button><button class="opt">Soldier</button><button class="opt">Stretcher</button><button class="opt">Rowlock</button></div>
+      <div class="why">Stretcher = lying flat, long face showing horizontally. Soldier shows the long face too — but <i>vertically</i>.</div></div>
+  </section>
+
+  <section class="topic" id="s4"><span class="num">1.4</span>
+    <h2>Bond patterns</h2>
+    <p><b>Pattern bond</b> = the arrangement of units in the wall face. Patterns are used for looks, and (before metal ties and joint reinforcement existed) to <b>overlap bricks so the wall acts as one structural whole</b>. Headers are drawn darker so you can spot them.</p>
+    <div class="grid-dia">
+      <figure class="dia">
+        <div class="dia-controls" data-chips="bondSet">
+          <button class="chip" data-v="running">Running</button><button class="chip" data-v="common">Common</button><button class="chip on" data-v="flemish">Flemish</button><button class="chip" data-v="english">English</button><button class="chip" data-v="stack">Stack</button>
+        </div>
+        <div id="bondBox"></div>
+        <p id="bondHow" style="margin:10px 2px 0;font-weight:600"></p>
+      </figure>
+      <div>
+        <table class="t"><tr><th>Bond</th><th>Recognize it by…</th></tr>
+          <tr><td class="k">Running</td><td>all stretchers, joints offset ½ brick</td></tr>
+          <tr><td class="k">Common / American</td><td>running bond + a header course every ~6th course</td></tr>
+          <tr><td class="k" style="color:var(--brick)">Flemish</td><td><b>H‑S‑H‑S alternating within every course</b></td></tr>
+          <tr><td class="k">English</td><td>whole courses alternate: all S, then all H</td></tr>
+          <tr><td class="k">Stack</td><td>joints line up vertically</td></tr></table>
+        <p class="pill">CMU walls usually use running or stack bond.</p>
+        <div class="callout trap"><b>Classic trap</b><p><b>Flemish</b> = alternate <i>within</i> each course. <b>English</b> = alternate <i>whole courses</i>. The quiz literally offers "a full course of headers alternating with a full course of stretchers" — that's English, not Flemish.</p></div>
+      </div>
+    </div>
+    <div class="qc" data-a="1"><div class="qh">Quick check</div><div class="qq">Which arrangement identifies Flemish bond?</div>
+      <div class="opts"><button class="opt">All stretchers, joints offset</button><button class="opt">Alternating headers and stretchers within each course</button><button class="opt">A full course of headers alternating with a full course of stretchers</button><button class="opt">All stretchers with vertical joints aligned</button></div>
+      <div class="why">Flemish = H, S, H, S across every single course. (Option C is English bond; D is stack bond.)</div></div>
+  </section>
+
+  <section class="topic" id="s5"><span class="num">1.5</span>
+    <h2>How clay brick is made</h2>
+    <figure class="dia">
+      <svg viewBox="0 0 900 190" role="img" aria-label="Brick manufacturing steps">
+        <g font-size="12">
+          <!-- step boxes -->
+          <g transform="translate(10,30)"><rect width="128" height="126" rx="12" fill="#efe6d4" class="o"/><path d="M20 80 l25 -35 l15 15 l20 -28 l30 48z" fill="#a88a64" class="o"/><text x="64" y="100" class="lbl" text-anchor="middle">1 · Dig clay/shale</text><text x="64" y="20" class="lbl-m" text-anchor="middle">QUARRY</text></g>
+          <g transform="translate(160,30)"><rect width="128" height="126" rx="12" fill="#efe6d4" class="o"/><circle cx="40" cy="55" r="16" fill="#c9a77d" class="o"/><circle cx="82" cy="55" r="16" fill="#c9a77d" class="o"/><path d="M30 80 h68" stroke="#7d6243" stroke-width="3" stroke-dasharray="3 3"/><text x="64" y="100" class="lbl" text-anchor="middle">2 · Dry, crush,</text><text x="64" y="20" class="lbl-m" text-anchor="middle">PREPARE</text><text x="64" y="114" class="lbl-s" text-anchor="middle">pulverize, screen</text></g>
+          <g transform="translate(310,30)"><rect width="128" height="126" rx="12" fill="#efe6d4" class="o"/><rect x="24" y="40" width="80" height="34" rx="6" fill="#9aa3a8" class="o"/><path d="M34 57 q8 -10 16 0 t16 0 t16 0 t16 0" stroke="#fff" stroke-width="2.4" fill="none"/><text x="64" y="100" class="lbl" text-anchor="middle">3 · Mix w/ water</text><text x="64" y="20" class="lbl-m" text-anchor="middle">PUG MILL</text></g>
+          <g transform="translate(460,30)"><rect width="128" height="126" rx="12" fill="#efe6d4" class="o"/><rect x="24" y="44" width="80" height="28" fill="#c98a6e" class="o"/><path d="M50 44 v28 M77 44 v28" stroke="#1d2433" stroke-width="1.3"/><text x="64" y="100" class="lbl" text-anchor="middle">4 · Mold units</text><text x="64" y="20" class="lbl-m" text-anchor="middle">SHAPE</text></g>
+          <g transform="translate(610,30)"><rect width="128" height="126" rx="12" fill="#efe6d4" class="o"/><rect x="34" y="50" width="60" height="22" fill="#d9a48c" class="o"/><path d="M44 44 q4 -8 0 -14 M64 44 q4 -8 0 -14 M84 44 q4 -8 0 -14" stroke="#7b8293" stroke-width="2" fill="none"/><text x="64" y="100" class="lbl" text-anchor="middle">5 · Pre-dry</text><text x="64" y="20" class="lbl-m" text-anchor="middle">DRY</text></g>
+          <g transform="translate(760,30)"><rect width="128" height="126" rx="12" fill="#ffe0d2" class="o"/><path d="M24 78 v-30 q40 -26 80 0 v30z" fill="#7e2c1b" class="o"/><path d="M52 74 q-6 -12 6 -20 q-2 10 8 12 q4 -8 0 -14 q14 8 6 22z" fill="#f3a530"/><text x="64" y="100" class="lbl" text-anchor="middle">6 · FIRE in kiln</text><text x="64" y="20" class="lbl-m" text-anchor="middle">KILN</text><text x="64" y="114" class="lbl-s" text-anchor="middle">→ comes out bone dry</text></g>
+          <g stroke="#1d2433" stroke-width="2"><path d="M140 86 h16" marker-end="url(#m-arrow-ink)"/><path d="M290 86 h16" marker-end="url(#m-arrow-ink)"/><path d="M440 86 h16" marker-end="url(#m-arrow-ink)"/><path d="M590 86 h16" marker-end="url(#m-arrow-ink)"/><path d="M740 86 h16" marker-end="url(#m-arrow-ink)"/></g>
+        </g>
+      </svg>
+      <figcaption>Surface treatments can change face color/texture. Results can be very uniform or deliberately irregular.</figcaption>
+    </figure>
+    <div class="grid2">
+      <div>
+        <h3>Brick types</h3>
+        <p><b>Solid</b>, <b>cored</b> (holes through), <b>hollow</b>, and <b>frogged</b> (a recess in one bed face).</p>
+        <h3>Standard vs. modular brick</h3>
+        <table class="t"><tr><th></th><th>Width</th><th>Height</th><th>Length</th></tr>
+          <tr><td class="k">Standard</td><td>3⅝"</td><td>2¼"</td><td>8"</td></tr>
+          <tr><td class="k">Modular</td><td>3⅝"</td><td>2¼"</td><td><b>7⅝"</b></td></tr></table>
+        <p>Modular is ⅜" short so that brick + ⅜" mortar joint = an even 8" — it lines up with CMU (see Lesson 5).</p>
+      </div>
+      <div class="callout exam"><b>Practice-quiz answer, in your words</b><p>"Clay or shale is prepared, shaped, dried, and <b>fired in a kiln</b>." That's the whole story in one sentence — memorize it.</p></div>
+    </div>
+  </section>
+
+  <section class="topic" id="s6"><span class="num">1.6</span>
+    <h2>Why brick <i>grows</i> after firing (and block shrinks)</h2>
+    <div class="grid-dia">
+      <figure class="dia">
+        <svg viewBox="0 0 520 250" role="img" aria-label="Brick grows, block shrinks">
+          <text x="130" y="22" class="lbl-b" text-anchor="middle">BRICK GROWS</text>
+          <rect x="40" y="60" width="70" height="34" class="f-brick o"/><text x="75" y="112" class="lbl-s" text-anchor="middle">out of kiln:</text><text x="75" y="126" class="lbl-s" text-anchor="middle">bone dry</text>
+          <path d="M118 77 h28" stroke="#2a8bd6" stroke-width="2.5" marker-end="url(#m-arrow-water)"/>
+          <g class="pulse"><circle cx="130" cy="58" r="3" class="drop"/><circle cx="140" cy="96" r="3" class="drop"/></g>
+          <rect x="155" y="54" width="86" height="46" class="f-brick o"/>
+          <path d="M150 77 h-12 M246 77 h12" stroke="#b3261e" stroke-width="2.5" marker-end="url(#m-arrow-red)"/>
+          <text x="198" y="118" class="lbl-s" text-anchor="middle">absorbs moisture</text><text x="198" y="132" class="lbl-s" text-anchor="middle">(+ sun heats dark brick)</text>
+          <rect x="40" y="150" width="200" height="40" rx="8" fill="#ffe8e0" stroke="#b5452b"/><text x="140" y="175" class="lbl" text-anchor="middle">→ needs EXPANSION joints</text>
+          <line x1="262" y1="20" x2="262" y2="230" stroke="#d9d0bd" stroke-dasharray="4 4"/>
+          <text x="390" y="22" class="lbl-b" text-anchor="middle">BLOCK SHRINKS</text>
+          <rect x="290" y="54" width="86" height="46" class="f-cmu o"/><text x="333" y="118" class="lbl-s" text-anchor="middle">steam-cured:</text><text x="333" y="132" class="lbl-s" text-anchor="middle">starts moist</text>
+          <path d="M384 77 h22" stroke="#7b8293" stroke-width="2.5" marker-end="url(#m-arrow)"/>
+          <rect x="420" y="62" width="64" height="30" class="f-cmu o"/>
+          <path d="M412 77 h8 M492 77 h-8" stroke="#b3261e" stroke-width="2.5" marker-end="url(#m-arrow-red)"/>
+          <text x="452" y="118" class="lbl-s" text-anchor="middle">dries out</text>
+          <rect x="290" y="150" width="200" height="40" rx="8" fill="#eef1f3" stroke="#6f7880"/><text x="390" y="175" class="lbl" text-anchor="middle">→ needs CONTROL joints</text>
+          <text x="260" y="226" class="lbl-s" text-anchor="middle">Without joints, long walls crack. In the field the two names get mixed up — both are built similarly.</text>
+        </svg>
+      </figure>
+      <div>
+        <p>Brick leaves the kiln with essentially <b>zero moisture</b>. Over time it <b>absorbs moisture from the environment and expands</b>. Dark brick also heats up in the sun and expands.</p>
+        <p>A <b>vertical expansion joint</b> is a planned gap through the brick veneer, filled with a squishy <b>backer rod + sealant</b>. As the brick grows sideways, the joint <b>compresses</b> instead of the wall cracking.</p>
+        <div class="callout hook"><b>Memory hook</b><p><b>B</b>rick = <b>B</b>igger → <b>E</b>xpansion joint. <b>C</b>MU (concrete) = <b>C</b>ontracts → <b>C</b>ontrol joint.</p></div>
+        <div class="callout exam"><b>On the exam</b><p>Purpose of vertical expansion joints in fired-clay brick veneer = <b>to accommodate expansion as the fired brick absorbs moisture.</b> They do <i>not</i> carry weight, drain water, or add bond.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="done-row"><a class="btn ghost" href="index.html">← Home</a><button class="btn" data-done>Mark this lesson done</button><a class="btn ghost" href="cmu.html">Next: CMU →</a></div>
+</main>
+<script>
+function cwSet(v){ document.getElementById('cwBox').innerHTML = DIA.courseWythe(v); }
+function bondSet(v){ document.getElementById('bondBox').innerHTML = DIA.bond(v,{w:440,rows:9}); document.getElementById('bondHow').innerHTML = '<span style="color:var(--brick)">'+DIA.BONDS[v].name+':</span> '+DIA.BONDS[v].how; }
+document.addEventListener('DOMContentLoaded',()=>bondSet('flemish'));
+</script>
+<script src="js/app.js"></script>
+</body></html>

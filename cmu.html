@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2 · CMU — CONM 1200 Exam 3</title>
+<link rel="stylesheet" href="css/style.css"><script src="js/diagrams.js"></script></head>
+<body style="--accent:var(--cmu-d)">
+<main class="wrap">
+  <div class="lesson-hero">
+    <div class="kicker">Lesson 2 · Concrete Masonry Units</div>
+    <h1>CMU: Walls, Units &amp; Reinforcing</h1>
+    <p class="lede">Concrete block isn't just "gray bricks." Different wall jobs (bearing, partition, shear) and a whole family of special-shaped units — corner, bullnose, bond beam — each with one clear purpose.</p>
+    <div class="toc"><a href="#s1">What CMU walls do</a><a href="#s2">Sizes</a><a href="#s3">Unit shapes</a><a href="#s4">Bond beams &amp; reinforcing</a><a href="#s5">Lintels &amp; arches</a><a href="#s6">Finishes</a><a href="#s7">Laying &amp; scaffolding</a></div>
+  </div>
+
+  <section class="topic" id="s1"><span class="num">2.1</span>
+    <h2>What CMU walls do</h2>
+    <figure class="dia">
+      <svg viewBox="0 0 900 300" role="img" aria-label="Bearing wall, partition and shear wall">
+        <!-- bearing -->
+        <text x="150" y="22" class="lbl-b" text-anchor="middle">BEARING WALL</text>
+        <rect x="40" y="70" width="220" height="16" fill="url(#p-conc)" class="o"/>
+        <text x="196" y="48" class="lbl-s">floor/roof slab</text>
+        <rect x="110" y="86" width="80" height="150" fill="url(#p-cmu)" class="o"/>
+        <rect x="90" y="236" width="120" height="26" fill="url(#p-conc)" class="o"/>
+        <g stroke="#b3261e" stroke-width="3"><path d="M130 32 v32" marker-end="url(#m-arrow-red)"/><path d="M170 32 v32" marker-end="url(#m-arrow-red)"/><path d="M150 100 v120" marker-end="url(#m-arrow-red)" stroke-dasharray="6 5"/></g>
+        <text x="150" y="282" class="lbl-s" text-anchor="middle">carries GRAVITY loads (dead, live, snow)</text>
+        <text x="150" y="296" class="lbl-s" text-anchor="middle">down to the foundation · often rebar + grout</text>
+        <!-- partition -->
+        <text x="450" y="22" class="lbl-b" text-anchor="middle">NONBEARING PARTITION</text>
+        <rect x="320" y="56" width="260" height="14" fill="url(#p-conc)" class="o"/>
+        <rect x="320" y="236" width="260" height="14" fill="url(#p-conc)" class="o"/>
+        <rect x="410" y="80" width="80" height="156" fill="url(#p-cmu)" class="o"/>
+        
+        <rect x="340" y="140" width="50" height="60" rx="6" fill="#efe6d4" stroke="#7b8293"/><text x="365" y="175" class="lbl-s" text-anchor="middle">Room A</text>
+        <rect x="510" y="140" width="50" height="60" rx="6" fill="#efe6d4" stroke="#7b8293"/><text x="535" y="175" class="lbl-s" text-anchor="middle">Room B</text>
+        <path d="M450 110 v100" stroke="#7b8293" stroke-width="2.5" marker-end="url(#m-arrow)"/>
+        <text x="450" y="282" class="lbl-s" text-anchor="middle">only carries ITS OWN weight</text>
+        <text x="450" y="296" class="lbl-s" text-anchor="middle">divides space: rooms, corridors, closets</text>
+        <!-- shear -->
+        <text x="755" y="22" class="lbl-b" text-anchor="middle">SHEAR WALL</text>
+        <rect x="650" y="60" width="14" height="190" class="f-steel o"/><rect x="846" y="60" width="14" height="190" class="f-steel o"/><rect x="650" y="56" width="210" height="14" class="f-steel o"/>
+        <rect x="664" y="70" width="182" height="180" fill="url(#p-cmu)" class="o"/>
+        <path d="M600 63 h44" stroke="#2a8bd6" stroke-width="5" marker-end="url(#m-arrow-water)"/>
+        <text x="604" y="52" class="lbl" fill="#2a8bd6">wind</text>
+        <path d="M664 70 L846 250" stroke="#2e7d4f" stroke-width="2" stroke-dasharray="6 4"/>
+        <path d="M846 70 L664 250" stroke="#2e7d4f" stroke-width="2" stroke-dasharray="6 4"/>
+        <rect x="640" y="250" width="230" height="16" fill="url(#p-conc)" class="o"/>
+        <text x="755" y="282" class="lbl-s" text-anchor="middle">diagonals = racking the wall prevents</text>
+        <text x="755" y="298" class="lbl-s" text-anchor="middle">resists IN-PLANE lateral loads (wind, quake)</text>
+      </svg>
+      <figcaption>Steel frame + CMU infill acting as a shear wall: the block stops the frame from racking (leaning) sideways.</figcaption>
+    </figure>
+    <div class="grid2">
+      <div>
+        <p><b>Six common uses of CMU walls:</b> foundation walls (instead of cast-in-place concrete), bearing walls, <b>shear walls</b>, <b>interior partitions</b>, <b>backup walls</b> (behind brick veneer), and retaining walls.</p>
+        <p>Shear walls give stiffness to the building frame — used in both concrete and steel frames, and needed to resist wind <b>in both directions</b> (so architects place them creatively).</p>
+      </div>
+      <div class="callout exam"><b>On the exam: partition vs. shear wall</b>
+        <p>A <b>nonbearing CMU partition</b> divides space and carries <b>only its own weight</b>.<br>A <b>CMU shear wall</b> <b>resists in-plane lateral forces</b> from wind or earthquakes and transfers them to the foundation.</p></div>
+    </div>
+    <div class="qc" data-a="0"><div class="qh">Quick check</div><div class="qq">Which wall is designed to resist in-plane lateral loads such as those from wind?</div>
+      <div class="opts"><button class="opt">CMU shear wall</button><button class="opt">Nonbearing CMU partition</button><button class="opt">Anchored brick veneer</button><button class="opt">Freestanding masonry screen</button></div>
+      <div class="why">"Lateral loads" + "in-plane" = shear wall. A partition just divides space.</div></div>
+  </section>
+
+  <section class="topic" id="s2"><span class="num">2.2</span>
+    <h2>CMU sizes — nominal vs. actual</h2>
+    <div class="grid-dia">
+      <figure class="dia">
+        <svg viewBox="0 0 490 250" role="img" aria-label="CMU nominal and actual dimensions">
+          <polygon points="60,200 300,200 360,160 360,60 300,100 60,100" fill="none"/>
+          <polygon points="60,100 300,100 360,60 120,60" class="f-cmu-l o"/>
+          <rect x="88" y="70" width="70" height="22" rx="4" transform="skewX(-34) translate(53,0)" fill="#6f7880" opacity=".55"/>
+          <rect x="170" y="70" width="70" height="22" rx="4" transform="skewX(-34) translate(53,0)" fill="#6f7880" opacity=".55"/>
+          <polygon points="300,100 360,60 360,160 300,200" class="f-cmu-d o"/>
+          <rect x="60" y="100" width="240" height="100" class="f-cmu o"/>
+          <path d="M60 222 h240" class="dim" marker-start="url(#m-arrow)" marker-end="url(#m-arrow)"/>
+          <text x="180" y="240" class="lbl" text-anchor="middle">16" nominal → 15⅝" actual</text>
+          <path d="M40 100 v100" class="dim" marker-start="url(#m-arrow)" marker-end="url(#m-arrow)"/>
+          <text x="30" y="150" class="lbl" text-anchor="middle" transform="rotate(-90 30 150)">8" → 7⅝"</text>
+          <path d="M368 166 l60 -40" class="dim" marker-start="url(#m-arrow)" marker-end="url(#m-arrow)"/>
+          <text x="404" y="168" class="lbl">8" → 7⅝"</text>
+          <text x="404" y="184" class="lbl-s">(width)</text>
+          <text x="160" y="40" class="lbl-s">hollow cores →</text>
+        </svg>
+        <figcaption>An "8×8×16" stretcher block. Actual sizes are ⅜" less than nominal to leave room for a ⅜" mortar joint.</figcaption>
+      </figure>
+      <div>
+        <p>CMU is a <b>modular system</b>. Nominal (named) size includes the mortar joint; the actual block is <b>⅜" smaller</b>.</p>
+        <div class="callout hook"><b>Two modular facts to know cold</b>
+          <p><b>3 courses of modular brick</b> (with joints) = <b>1 CMU course</b> (8").<br><b>12 modular bricks</b> (with joints) occupy the same volume as <b>1 CMU</b>.</p></div>
+        <p>Common CMU widths are named by nominal thickness: 4", 6", 8", 10", 12". (Your CMU lab used a <b>6-inch nominal</b> wall.)</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="topic" id="s3"><span class="num">2.3</span>
+    <h2>The CMU unit family (plan views)</h2>
+    <p>Each special unit solves a specific problem. Red lines mark the special feature.</p>
+    <div class="grid3" style="grid-template-columns:repeat(auto-fill,minmax(190px,1fr))">
+      <figure class="dia" style="margin:0"><div data-dia="cmuUnit" data-args='["stretcher"]'></div><figcaption>Most common — fills in the middle of the wall. Flanged ("eared") ends hold mortar.</figcaption></figure>
+      <figure class="dia" style="margin:0;border-color:var(--brick)"><div data-dia="cmuUnit" data-args='["corner"]'></div><figcaption><b>Corner:</b> one flat, finished end → used at <b>outside corners &amp; wall ends</b>, gives finished faces to both walls.</figcaption></figure>
+      <figure class="dia" style="margin:0"><div data-dia="cmuUnit" data-args='["half"]'></div><figcaption><b>Half unit:</b> used at the end of a wall to finish the running-bond pattern.</figcaption></figure>
+      <figure class="dia" style="margin:0;border-color:var(--brick)"><div data-dia="cmuUnit" data-args='["bullnose"]'></div><figcaption><b>Bullnose:</b> <b>rounded corner</b> or jamb — great in high-traffic interiors (no sharp edge to chip).</figcaption></figure>
+      <figure class="dia" style="margin:0;border-color:var(--brick)"><div data-dia="cmuUnit" data-args='["bondbeam"]'></div><figcaption><b>Bond beam:</b> U-shaped channel that holds <b>horizontal rebar + grout</b>, forming a beam inside the wall.</figcaption></figure>
+      <figure class="dia" style="margin:0"><div data-dia="cmuUnit" data-args='["A"]'></div><figcaption><b>"A" unit:</b> one open end, so it can slide around a vertical bar in reinforced walls.</figcaption></figure>
+      <figure class="dia" style="margin:0"><div data-dia="cmuUnit" data-args='["H"]'></div><figcaption><b>"H" unit:</b> both ends open — for heavily reinforced walls.</figcaption></figure>
+      <figure class="dia" style="margin:0"><div data-dia="cmuUnit" data-args='["pilaster"]'></div><figcaption><b>Pilaster:</b> builds a reinforced column into the wall, often where it supports a steel column.</figcaption></figure>
+      <figure class="dia" style="margin:0"><div data-dia="cmuUnit" data-args='["sash"]'></div><figcaption><b>Sash:</b> slot locks in a metal door frame. (Also: <b>scored</b> units look like half-blocks; <b>combination</b> block webs can be knocked out to act like a bond beam.)</figcaption></figure>
+    </div>
+    <div class="callout exam" style="margin-top:18px"><b>On the exam — the matching question</b>
+      <p><b>Corner</b> → wall ends / outside corners. <b>Bullnose</b> → rounded edges. <b>Bond beam</b> → horizontal steel. Every wrong option scrambles these three — lock in the pairs.</p></div>
+    <div class="qc" data-a="3"><div class="qh">Quick check</div><div class="qq">Which set correctly matches CMU units to their uses?</div>
+      <div class="opts"><button class="opt">Corner – rounded edges; bullnose – horizontal steel; bond beam – wall ends</button><button class="opt">Corner – horizontal steel; bullnose – wall ends; bond beam – rounded edges</button><button class="opt">Corner – wall ends; bullnose – horizontal steel; bond beam – rounded edges</button><button class="opt">Corner – wall ends; bullnose – rounded edges; bond beam – horizontal steel</button></div>
+      <div class="why">Each name tells you its job: <b>corner</b> at corners/ends, <b>bull-nose</b> = rounded nose, <b>bond beam</b> = a beam (needs horizontal steel).</div></div>
+  </section>
+
+  <section class="topic" id="s4"><span class="num">2.4</span>
+    <h2>Bond beams &amp; reinforced masonry</h2>
+    <div class="grid-dia">
+      <figure class="dia">
+        <svg viewBox="0 0 470 330" role="img" aria-label="Reinforced CMU wall elevation">
+          <defs><clipPath id="rw"><rect x="30" y="60" width="380" height="240"/></clipPath></defs>
+          <rect x="20" y="40" width="400" height="20" fill="url(#p-conc)" class="o"/>
+          <text x="220" y="34" class="lbl-s" text-anchor="middle">floor/roof slab bears here</text>
+          <rect x="30" y="60" width="380" height="240" class="f-mortar"/>
+          <g clip-path="url(#rw)">
+            <!-- block courses: 30px tall, 60 wide -->
+            <g id="courses"></g>
+          </g>
+          <rect x="30" y="60" width="380" height="240" fill="none" class="o"/>
+          <rect x="20" y="300" width="400" height="22" fill="url(#p-conc)" class="o"/>
+          <text x="220" y="316" class="lbl-s" text-anchor="middle">foundation</text>
+          <g id="labels"></g>
+        </svg>
+        <figcaption>Dark cells = grouted cores with vertical rebar. Top course = bond beam with horizontal rebar, right under the slab. Window has a lintel.</figcaption>
+      </figure>
+      <div>
+        <p><b>Reinforced masonry</b> is usually part of <b>bearing wall</b> construction. For mid-rise buildings, walls need very high compressive and flexural (bending) strength while staying a reasonable thickness → so we <b>grout rebar into the cavities</b> of the block.</p>
+        <p><b>Bond beams</b> strengthen a wall <b>where floors and roofs frame into it</b> (look for one directly below where the slab rests). They run the length of the wall and may be more than one course tall.</p>
+        <p><b>Grout</b> = cement + sand + water (sometimes an admixture to reduce shrinkage). Fills voids in CMU walls and works with rebar to add strength. Placed by <b>pump or bucket</b>, in <b>low-lift</b> or <b>high-lift</b> pours.</p>
+        <div class="callout note"><b>Strength of a masonry wall depends on</b>
+          <p>① the masonry unit ② the mortar ③ reinforcing &amp; ties ④ grout.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="topic" id="s5"><span class="num">2.5</span>
+    <h2>Spanning openings: lintels &amp; arches</h2>
+    <div class="grid-dia">
+      <figure class="dia">
+        <svg viewBox="0 0 470 250" role="img" aria-label="Lintel and arch load paths">
+          <text x="110" y="22" class="lbl-b" text-anchor="middle">LINTEL</text>
+          <rect x="20" y="40" width="180" height="70" fill="url(#p-cmu)" class="o"/>
+          <rect x="60" y="110" width="100" height="90" class="f-glass o"/>
+          <rect x="20" y="110" width="40" height="90" fill="url(#p-cmu)" class="o"/><rect x="160" y="110" width="40" height="90" fill="url(#p-cmu)" class="o"/>
+          <rect x="44" y="100" width="132" height="12" class="f-steel o"/>
+          <g stroke="#b3261e" stroke-width="2.5"><path d="M110 50 v40" marker-end="url(#m-arrow-red)"/><path d="M80 106 q-30 0 -40 30 v40" fill="none" marker-end="url(#m-arrow-red)"/><path d="M140 106 q30 0 40 30 v40" fill="none" marker-end="url(#m-arrow-red)"/></g>
+          <text x="110" y="222" class="lbl-s" text-anchor="middle">short beam carries wall load around</text>
+          <text x="110" y="236" class="lbl-s" text-anchor="middle">the opening — not onto the frame</text>
+          <text x="350" y="22" class="lbl-b" text-anchor="middle">ARCH</text>
+          <rect x="260" y="40" width="190" height="160" fill="url(#p-brick)" class="o"/>
+          <path d="M295 200 V130 A60 60 0 0 1 415 130 V200Z" class="f-glass o"/>
+          <path d="M285 130 A70 70 0 0 1 425 130" fill="none" stroke="#7e2c1b" stroke-width="14"/>
+          <g stroke="#2e7d4f" stroke-width="2.5" fill="none"><path d="M320 78 l-24 30" marker-end="url(#m-arrow-green)"/><path d="M380 78 l24 30" marker-end="url(#m-arrow-green)"/></g>
+          <text x="355" y="222" class="lbl-s" text-anchor="middle">all parts in COMPRESSION —</text>
+          <text x="355" y="236" class="lbl-s" text-anchor="middle">perfect for masonry (Romans!)</text>
+        </svg>
+      </figure>
+      <div>
+        <p><b>Lintels</b> are short beams over openings. They carry wall loads around the opening to the wall on each side and keep wall loads off the window/door frames.</p>
+        <table class="t"><tr><th>In a CMU wall</th><th>In a brick wall</th></tr>
+          <tr><td>Steel lintel (galvanized/stainless outside), ends set in mortar</td><td>Steel lintel — usually <b>2 steel angles</b></td></tr>
+          <tr><td>Block lintel: lintel block + rebar + grout (needs <b>temporary support</b>)</td><td>Brick lintel: rebar + grout between brick (temporary support)</td></tr>
+          <tr><td>Reinforced concrete — precast or cast-in-place</td><td>Reinforced concrete — precast or CIP (stone lintels too)</td></tr></table>
+      </div>
+    </div>
+  </section>
+
+  <section class="topic" id="s6"><span class="num">2.6</span>
+    <h2>Special surface finishes</h2>
+    <div class="grid3" style="grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px">
+      <figure class="dia" style="margin:0"><svg viewBox="0 0 140 70"><rect x="5" y="5" width="130" height="60" fill="#b9aa95" class="o"/><path d="M5 20 l20 -6 15 8 25 -9 20 7 25 -6 25 5 M5 42 l18 5 22 -7 18 6 30 -6 17 6 25 -4" stroke="#8a7a62" stroke-width="2" fill="none"/></svg><figcaption><b>Split face</b> — rough, stone-like</figcaption></figure>
+      <figure class="dia" style="margin:0"><svg viewBox="0 0 140 70"><rect x="5" y="5" width="130" height="60" class="f-cmu o"/><path d="M25 5v60M50 5v60M75 5v60M100 5v60M125 5v60" stroke="#6f7880" stroke-width="5"/></svg><figcaption><b>Ribbed</b> — vertical ribs</figcaption></figure>
+      <figure class="dia" style="margin:0"><svg viewBox="0 0 140 70"><rect x="5" y="5" width="130" height="60" class="f-cmu o"/><path d="M25 5v60M50 5v60M75 5v60M100 5v60M125 5v60" stroke="#8a8f88" stroke-width="7" stroke-dasharray="3 2"/></svg><figcaption><b>Split ribbed</b> — rough ribs</figcaption></figure>
+      <figure class="dia" style="margin:0"><svg viewBox="0 0 140 70"><rect x="5" y="5" width="130" height="60" fill="#c9c3b6" class="o"/><circle cx="30" cy="25" r="5" fill="#8f8a7d"/><circle cx="80" cy="45" r="7" fill="#a59f90"/><circle cx="110" cy="20" r="4" fill="#7d786c"/><circle cx="55" cy="50" r="3" fill="#7d786c"/></svg><figcaption><b>Burnished</b> — ground smooth, shows aggregate</figcaption></figure>
+      <figure class="dia" style="margin:0"><svg viewBox="0 0 140 70"><rect x="5" y="5" width="130" height="60" fill="#3d8b8f" class="o"/><path d="M15 15 l30 0" stroke="#fff" stroke-width="4" opacity=".6" stroke-linecap="round"/></svg><figcaption><b>Glazed</b> — smooth, washable: bathrooms, kitchens, cafeterias</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="topic" id="s7"><span class="num">2.7</span>
+    <h2>Laying masonry &amp; scaffolding</h2>
+    <div class="grid-dia">
+      <figure class="dia">
+        <svg viewBox="0 0 470 240" role="img" aria-label="Building leads and laying to the line">
+          <rect x="20" y="200" width="430" height="20" fill="url(#p-conc)" class="o"/>
+          <text x="235" y="236" class="lbl-s" text-anchor="middle">① lay out wall on footing</text>
+          <!-- leads stepped -->
+          <g fill="url(#p-cmu)" class="o">
+            <rect x="20" y="170" width="60" height="30"/><rect x="80" y="170" width="60" height="30"/><rect x="140" y="170" width="60" height="30"/>
+            <rect x="20" y="140" width="60" height="30"/><rect x="80" y="140" width="60" height="30"/>
+            <rect x="20" y="110" width="60" height="30"/><rect x="20" y="80" width="30" height="30"/>
+            <rect x="390" y="170" width="60" height="30"/><rect x="330" y="170" width="60" height="30"/><rect x="270" y="170" width="60" height="30"/>
+            <rect x="390" y="140" width="60" height="30"/><rect x="330" y="140" width="60" height="30"/>
+            <rect x="390" y="110" width="60" height="30"/><rect x="420" y="80" width="30" height="30"/>
+          </g>
+          <line x1="20" y1="138" x2="450" y2="138" stroke="#b3261e" stroke-width="1.5"/>
+          <text x="235" y="130" class="lbl" text-anchor="middle" fill="#b3261e">③ string line — lay to the line</text>
+          <text x="60" y="68" class="lbl" text-anchor="middle">② lead</text><text x="420" y="68" class="lbl" text-anchor="middle">② lead</text>
+          <rect x="200" y="170" width="70" height="30" fill="none" stroke="#7b8293" stroke-dasharray="5 4"/><text x="235" y="190" class="lbl-s" text-anchor="middle">fill in</text>
+        </svg>
+      </figure>
+      <div>
+        <ol class="tight">
+          <li><b>Lay out</b> the wall location on the footing.</li>
+          <li><b>Build the leads</b> (stepped corners/ends) first — set precisely level and plumb.</li>
+          <li><b>Lay to the line</b> — a string pulled between leads; fill in between them. Joint reinforcement goes into the bed joints as you go.</li>
+          <li><b>Tool the joints</b>, then brush off mortar once it's set enough. (Muriatic acid sometimes cleans mortar off <i>brick</i> — not needed for CMU.)</li>
+        </ol>
+        <p>Most masonry is built in place: slow, weather-dependent, and needs <b>scaffolding</b> as a work platform.</p>
+        <table class="t"><tr><th>Stationary scaffold</th><th>Adjustable scaffold</th></tr>
+          <tr><td>Tubular frames, cross bracing, guardrails, planking (wood <b>2×12s, 10 ft</b> or aluminum boards). <b>Screw jacks</b> level the legs; boards spread load so legs don't sink.</td><td>Work platform rides on a moveable carriage that climbs the tower as the wall rises. Cross-braced towers, guardrails, braced to the wall.</td></tr></table>
+      </div>
+    </div>
+  </section>
+
+  <div class="done-row"><a class="btn ghost" href="masonry-basics.html">← Brick &amp; Bonds</a><button class="btn" data-done>Mark this lesson done</button><a class="btn ghost" href="mortar.html">Next: Mortar →</a></div>
+</main>
+<script>
+// build reinforced wall
+(function(){
+  const g=document.getElementById('courses'), L=document.getElementById('labels');
+  const x0=30,y0=60,BW=60,CH=30,rows=8; let s='';
+  const grouted=[0,3,6]; // core columns (in 30px cells) grouted
+  for(let r=0;r<rows;r++){
+    const y=y0+r*CH, off=(r%2)*BW/2;
+    for(let c=-1;c<8;c++){
+      const x=x0+off+c*BW;
+      s+=`<rect x="${x+1.5}" y="${y+1.5}" width="${BW-3}" height="${CH-3}" fill="${r===0||r===2?'#b9b6ad':'#a3abb0'}"/>`;
+    }
+  }
+  // window
+  s+=`<rect x="${x0+150}" y="${y0+3*CH}" width="120" height="${4*CH}" class="f-glass o"/>`;
+  // grouted cells
+  [[30,1],[90,1],[330,1]].forEach(([cx])=>{ s+=`<rect x="${x0+cx-12}" y="${y0}" width="24" height="${rows*CH}" fill="#6f7880" opacity=".55"/><line x1="${x0+cx}" y1="${y0}" x2="${x0+cx}" y2="${y0+rows*CH}" stroke="#41657f" stroke-width="3.5"/>`; });
+  // bond beam top course and lintel course
+  s+=`<line x1="${x0}" y1="${y0+CH/2}" x2="${x0+380}" y2="${y0+CH/2}" stroke="#41657f" stroke-width="3.5"/>`;
+  s+=`<rect x="${x0+120}" y="${y0+2*CH}" width="180" height="${CH}" fill="#8f969b" stroke="#1d2433"/><line x1="${x0+120}" y1="${y0+2.5*CH}" x2="${x0+300}" y2="${y0+2.5*CH}" stroke="#41657f" stroke-width="3.5"/>`;
+  g.innerHTML=s;
+  L.innerHTML=`<text x="${x0+384}" y="${y0+14}" class="lbl" font-size="11">← bond</text><text x="${x0+392}" y="${y0+27}" class="lbl" font-size="11">beam</text>`+
+   `<text x="${x0+210}" y="${y0+2*CH-6}" class="lbl" text-anchor="middle" font-size="12" fill="#fff" stroke="#fff" stroke-width="3" paint-order="stroke"></text>`+
+   `<text x="${x0+210}" y="${y0+2*CH+20}" class="lbl-w" text-anchor="middle">lintel (bond beam over opening)</text>`;
+})();
+</script>
+<script src="js/app.js"></script>
+</body></html>
